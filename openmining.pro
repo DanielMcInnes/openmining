@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = openmining.exe
+TARGET = openmining
 QT += 3d
 QT += sql 	# dhm - needed for postgres interface
 CONFIG += c++11

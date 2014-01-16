@@ -19,7 +19,7 @@
 *.cache
 
 # executables
-*.exe
+openmining
 
 # vim temporary files
 .*.swp
