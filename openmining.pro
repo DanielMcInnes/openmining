@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = openmining
+TARGET = openmining.exe
 QT += 3d
 QT += sql 	# dhm - needed for postgres interface
 CONFIG += c++11
@@ -27,7 +27,7 @@ HEADERS = \
     simpleplot.h \
     utils.h \
 
-RESOURCES = model.qrc
+# RESOURCES = model.qrc
 
 # put the path to shared libraries here
 QMAKE_LFLAGS += -Wl,--rpath=/home/dmcinnes/qt5/qwtplot3d/lib # dhm - this is needed to make the executable know where to find .so files. Adding it to 'LIBS' isn't enough. See http://developer.nokia.com/Community/Wiki/How_to_deploy_and_link_a_shared_library_on_Harmattan
