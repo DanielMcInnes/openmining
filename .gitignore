@@ -18,7 +18,8 @@
 # cached db query results
 *.cache
 
-*.exe  
+# executables
+*.exe
 
 # vim temporary files
 .*.swp
