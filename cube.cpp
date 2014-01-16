@@ -1,20 +1,20 @@
 /*
   Copyright 2014 Daniel McInnes
 
-  This file is part of NineMops.
+  This file is part of OpenMining.
 
-  NineMops is free software: you can redistribute it and/or modify
+  OpenMining is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 
-  NineMops is distributed in the hope that it will be useful,
+  OpenMining is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with NineMops.  If not, see <http://www.gnu.org/licenses/>.
+  along with OpenMining.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
@@ -22,16 +22,13 @@
 // standard library includes
 
 // boost #includes
-//#include <boost/archive/text_oarchive.hpp>
-//#include <boost/archive/text_iarchive.hpp>
-//#include <boost/serialization/map.hpp>
 
 
 // Qt includes
 
 // my includes
 #include "cube.h"
-#include "utils.h"
+#include "utils/utils.h"
 
 
 using namespace std;

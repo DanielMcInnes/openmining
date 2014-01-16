@@ -18,27 +18,29 @@
 
 */
 
-#ifndef DATABASE_H
-#define DATABASE_H
+#ifndef find_or_return_default_h
+#define find_or_return_default_h
 
-// standard library #includes
 #include <iostream>
 
-// Qt #includes
-#include <QtSql/qsqldatabase.h>
-#include <QStringList>
+#include "contains.h"
 
-// my includes
-
-
-class Database
+namespace utils
 {
-public:
-  Database(const QStringList& args); 
-  bool m_initialised;
-  QSqlDatabase m_db;
-
-private:
-};
+  template <class Tcontainer, class Tkey>
+  typename Tcontainer::mapped_type& find_or_return_default(Tcontainer& container, const Tkey& key, Tcontainer& default_return_value)
+  {
+    if (contains(container, key)) 
+    { 
+      std::cout << FN << " found matching value." << std::endl;
+      return container.find(key)->second; 
+    }
+    else
+    {
+      std::cout << FN << " no matching value found." << std::endl;
+      return default_return_value.begin()->second;
+    }
+  }
+}
 
 #endif

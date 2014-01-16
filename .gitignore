@@ -30,5 +30,10 @@ moc*
 
 # This is a Qt project, which generates a makefile from a .pro file via 'qmake'
 Makefile
+
 cscope.*
 files
+
+# ignore doxygen generated files
+html/*
+latex/*

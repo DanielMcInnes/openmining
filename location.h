@@ -1,20 +1,20 @@
 /*
   Copyright 2014 Daniel McInnes
 
-  This file is part of NineMops.
+  This file is part of OpenMining.
 
-  NineMops is free software: you can redistribute it and/or modify
+  OpenMining is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 
-  NineMops is distributed in the hope that it will be useful,
+  OpenMining is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with NineMops.  If not, see <http://www.gnu.org/licenses/>.
+  along with OpenMining.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
@@ -40,11 +40,7 @@
 
 // my #includes
 #include "mytypes.h"
-#include "utils.h"
-#include "database.h"
-#include "cube.h"
-
-//class Cube;
+#include "cube.h" // 'Cube' member variable
 
 class Location
 {
@@ -57,7 +53,6 @@ public:
   latitude_t m_latitude;	// -116788254 = 116.788254 degrees south
   longitude_t m_longitude;//, m_maxlat;	// 543654588 = 54.3654588 degrees east
   elevation_t m_elevation; 	// 10889 = 108.89m above mean sea level (geoid)
-  //bool min_latitude(Location& i, Location& j) { return (i.m_latitude < j.m_latitude);}
   std::string toString(void) const;
 
 private:

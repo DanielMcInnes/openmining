@@ -1,30 +1,40 @@
 /*
   Copyright 2014 Daniel McInnes
 
-  This file is part of NineMops.
+  This file is part of OpenMining.
 
-  NineMops is free software: you can redistribute it and/or modify
+  OpenMining is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 
-  NineMops is distributed in the hope that it will be useful,
+  OpenMining is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with NineMops.  If not, see <http://www.gnu.org/licenses/>.
+  along with OpenMining.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-#include "location.h"
+// standard libraries
+#include <iostream>
+#include <fstream>
+
+// Qt includes
 #include <QSqlQuery>
 #include <QString>
 #include <QStringList>
-#include <iostream>
-#include <fstream>
-#include "utils.h"
+
+// my includes
+#include "location.h"
+#include "utils/utils.h"
+#include "utils/load.h"
+#include "utils/save.h"
+#include "utils/same_size.h"
+#include "utils/percent.h"
+#include "utils/update_progress.h"
 
 using namespace std;
 using namespace utils;
@@ -146,7 +156,7 @@ void Locations::build(QSqlQuery& query)
     csl_2_vec(query, 0, ",", vecLatitudes,  latitude);
     csl_2_vec(query, 1, ",", veclongitudes_t, longitude);
     csl_2_vec(query, 2, ",", vecLongitudes, elevation);
-    if( ! sameSize(vecLatitudes, veclongitudes_t, vecLongitudes))
+    if( ! same_size(vecLatitudes, veclongitudes_t, vecLongitudes))
     {
       cerr << "ERROR! db table has different numbers of latitudes, longitudes, and longitudes" << endl;
       exit (-1);

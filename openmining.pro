@@ -14,18 +14,17 @@ SOURCES = \
     main.cpp \
     modelview.cpp \
     simpleplot.cpp \
-    utils.cpp \
+    utils/utils.cpp \
 
 HEADERS = \
     cube.h \
     database.h \
     elevation.h \
-    find_or_return_default.h \
     location.h \
     modelview.h \
     mytypes.h \
     simpleplot.h \
-    utils.h \
+    utils/utils.h \
 
 # RESOURCES = model.qrc
 
