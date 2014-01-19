@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classCube.html#a28149322ac565e1aa5b6427e67d9644a" title="Cube::Print" alt="" coords="173,5,261,35"/>
-<area shape="rect" id="node5" href="$location_8cpp.html#a2f657b54fab2d51f6800c1286d29fae3" title="min_latitude" alt="" coords="172,59,263,88"/>
-<area shape="rect" id="node7" href="$location_8cpp.html#ae7bdb6bafe0c1d43c9f3bdf7f55db41b" title="min_longitude" alt="" coords="167,112,268,141"/>
-<area shape="rect" id="node9" href="$location_8cpp.html#ab17b7c6c9909b790a0c97f7cec0b6442" title="min_elevation" alt="" coords="167,165,268,195"/>
-</map>
