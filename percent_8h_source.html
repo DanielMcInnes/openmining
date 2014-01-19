@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>OpenMining: Main Page</title>
+<title>OpenMining: utils/percent.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -46,10 +46,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -68,13 +68,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
 </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">OpenMining Documentation</div>  </div>
+<div class="title">utils/percent.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<a href="percent_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef percent_h</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define percent_h</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="keyword">namespace </span>utils
+<a name="l00005"></a>00005 {
+<a name="l00006"></a>00006   <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;
+<a name="l00007"></a><a class="code" href="namespaceutils.html#a2451b8b7e918c8afbc0aa16851336b3e">00007</a>   T <a class="code" href="namespaceutils.html#a2451b8b7e918c8afbc0aa16851336b3e">percent</a>(T numerator, T denominator) 
+<a name="l00008"></a>00008   {
+<a name="l00009"></a>00009     <span class="keywordflow">return</span> ( (100 * numerator) / denominator); 
+<a name="l00010"></a>00010   }
+<a name="l00011"></a>00011 }
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="preprocessor">#endif</span>
+</pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -92,7 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 19 2014 13:55:19 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 19 2014 13:55:17 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

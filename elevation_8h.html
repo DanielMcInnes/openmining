@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>OpenMining: Main Page</title>
+<title>OpenMining: elevation.h File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -46,10 +46,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -68,12 +68,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
 </div>
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
-<div class="title">OpenMining Documentation</div>  </div>
+<div class="title">elevation.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &lt;string&gt;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;boost/archive/text_oarchive.hpp&gt;</code><br/>
+<code>#include &lt;boost/archive/text_iarchive.hpp&gt;</code><br/>
+<code>#include &lt;boost/serialization/map.hpp&gt;</code><br/>
+<code>#include &quot;<a class="el" href="mytypes_8h_source.html">mytypes.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="cube_8h_source.html">cube.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for elevation.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="elevation_8h__incl.png" border="0" usemap="#elevation_8h" alt=""/></div>
+<map name="elevation_8h" id="elevation_8h">
+<area shape="rect" id="node13" href="mytypes_8h.html" title="mytypes.h" alt="" coords="719,160,801,189"/><area shape="rect" id="node17" href="cube_8h.html" title="cube.h" alt="" coords="661,83,723,112"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="elevation_8h__dep__incl.png" border="0" usemap="#elevation_8hdep" alt=""/></div>
+<map name="elevation_8hdep" id="elevation_8hdep">
+<area shape="rect" id="node3" href="elevation_8cpp.html" title="elevation.cpp" alt="" coords="5,83,104,112"/><area shape="rect" id="node5" href="simpleplot_8h.html" title="simpleplot.h" alt="" coords="179,83,269,112"/><area shape="rect" id="node7" href="main_8cpp.html" title="main.cpp" alt="" coords="104,160,179,189"/><area shape="rect" id="node9" href="simpleplot_8cpp.html" title="simpleplot.cpp" alt="" coords="203,160,309,189"/></map>
+</div>
+</div>
+<p><a href="elevation_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLatitudes.html">Latitudes</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLongitudes.html">Longitudes</a></td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; <a class="el" href="mytypes_8h.html#a369e99670097571f018c763ebf3c84f9">longitude_t</a>, <br class="typebreak"/>
+<a class="el" href="classLatitudes.html">Latitudes</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elevation_8h.html#a119af1243cedf45891a0894735d72cd3">longitudes_t</a></td></tr>
+</table>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="a119af1243cedf45891a0894735d72cd3"></a><!-- doxytag: member="elevation.h::longitudes_t" ref="a119af1243cedf45891a0894735d72cd3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;<a class="el" href="mytypes_8h.html#a369e99670097571f018c763ebf3c84f9">longitude_t</a>, <a class="el" href="classLatitudes.html">Latitudes</a>&gt; <a class="el" href="elevation_8h.html#a119af1243cedf45891a0894735d72cd3">longitudes_t</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -92,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 19 2014 13:55:19 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 19 2014 13:55:17 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
