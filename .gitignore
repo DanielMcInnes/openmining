@@ -35,5 +35,9 @@ cscope.*
 files
 
 # ignore doxygen generated files
+<<<<<<< HEAD
 #html/*
+=======
+html/*
+>>>>>>> a0c2f8675aa15ce662247b92ee0fffa1c1723f5e
 latex/*
