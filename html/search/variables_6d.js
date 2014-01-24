@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['m_5fcoarseness',['m_coarseness',['../classRosenbrock.html#a55c1158694615ce9fd5d5fc05023147a',1,'Rosenbrock']]],
+  ['m_5fargs',['m_args',['../classLongitudes.html#a52d7ab160e123dcdc7ab5ac023eb98ae',1,'Longitudes']]],
+  ['m_5fcoarseness',['m_coarseness',['../classGridMappingFunction.html#a0de3dbf00b210e6fadd8f77906a47614',1,'GridMappingFunction']]],
   ['m_5fdb',['m_db',['../classDatabase.html#a7357cbeca05937556f66e2fe2288bdb5',1,'Database']]],
   ['m_5fdbnumrows',['m_dbNumRows',['../classLocations.html#a7b167c5179dd599151507de9f9292593',1,'Locations']]],
   ['m_5fdbrowcount',['m_dbRowCount',['../classLocations.html#aae51236e58468d786e64325a07e4d4db',1,'Locations']]],
@@ -11,9 +12,9 @@ var searchData=
   ['m_5fkey',['m_key',['../classLongitudes.html#a9bb404a7405f0d45d06a0663b07e130b',1,'Longitudes::m_key()'],['../classLocations.html#afd15e2a165053b64c5ce2349835284d7',1,'Locations::m_key()']]],
   ['m_5flatitude',['m_latitude',['../classLocation.html#a3f92fe3845c8a63ca159707fa9747c4b',1,'Location']]],
   ['m_5flatitudes',['m_latitudes',['../classLatitudes.html#a9c017191104f2be72bb11bdd19817e84',1,'Latitudes']]],
-  ['m_5flocations',['m_locations',['../classLocations.html#ac6d8e5586e9c0547c1aeb56e458be301',1,'Locations']]],
+  ['m_5flocations',['m_locations',['../classLocations.html#ac6d8e5586e9c0547c1aeb56e458be301',1,'Locations::m_locations()'],['../classGridMappingFunction.html#a8f1789fd639ed4c867213967b2ed7ef6',1,'GridMappingFunction::m_locations()']]],
   ['m_5flongitude',['m_longitude',['../classLocation.html#a679697e4021de3be75afc11a6d52e43b',1,'Location']]],
-  ['m_5flongitudes',['m_longitudes',['../classLongitudes.html#a92c842a6fa90deabd2cfc45502d18208',1,'Longitudes::m_longitudes()'],['../classRosenbrock.html#a1235809baf90defa21025246069ea3dd',1,'Rosenbrock::m_longitudes()'],['../classPlot.html#ad4a169c6e2a220a1801ec4d09fa639ff',1,'Plot::m_longitudes()']]],
+  ['m_5flongitudes',['m_longitudes',['../classLongitudes.html#a92c842a6fa90deabd2cfc45502d18208',1,'Longitudes']]],
   ['m_5fmaxel',['m_maxel',['../classCube.html#ab078372bb9f4006e853ba83720838235',1,'Cube']]],
   ['m_5fmaxlat',['m_maxlat',['../classCube.html#a3d4e5a112f467b0e429666fcb508838e',1,'Cube']]],
   ['m_5fmaxlong',['m_maxlong',['../classCube.html#a5f8bbb68f8f4b17beb4b6b66f4e7224f',1,'Cube']]],
@@ -21,7 +22,9 @@ var searchData=
   ['m_5fminlat',['m_minlat',['../classCube.html#ae990165fa176a5afb16b1c9bafd55f84',1,'Cube']]],
   ['m_5fminlong',['m_minlong',['../classCube.html#aff5664bfd7ef03f4f34058dfe28b0c4a',1,'Cube']]],
   ['m_5fnuminvalidlocations',['m_numInvalidLocations',['../classLocations.html#a667bca9d1d9a7e17119e8b14ac0355a4',1,'Locations']]],
+  ['m_5fplottedlongitudes',['m_plottedLongitudes',['../classLongitudes.html#aef237d81a027990382998dcbedb01263',1,'Longitudes']]],
   ['m_5fquery',['m_query',['../classLocations.html#a3bbcc358b7392078b5435571b3a2618b',1,'Locations']]],
+  ['m_5frequiredargs',['m_requiredArgs',['../classDatabase.html#a3fdb714d30665579e7fe0baaba847cfb',1,'Database']]],
   ['m_5fscene',['m_scene',['../classModelView.html#a9a660ccc0a389ad2a0ea5b73a7ed909b',1,'ModelView']]],
   ['m_5fsidelength',['m_sidelength',['../classCube.html#a9f1abc71ae8052f64992ff856670346a',1,'Cube']]],
   ['m_5fvalidxyz',['m_validXYZ',['../classLocations.html#ab3a4ed06d776249e73bd2a6bf1bd355a',1,'Locations']]]

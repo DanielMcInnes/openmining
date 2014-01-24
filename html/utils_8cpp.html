@@ -47,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -89,12 +90,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;QSqlQuery&gt;</code><br/>
 <code>#include &lt;QVariant&gt;</code><br/>
 <code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="copy__mapped__value_8h_source.html">copy_mapped_value.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="Exit_8h_source.html">Exit.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for utils.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="utils_8cpp__incl.png" border="0" usemap="#utils_2utils_8cpp" alt=""/></div>
 <map name="utils_2utils_8cpp" id="utils_2utils_8cpp">
-<area shape="rect" id="node13" href="utils_8h.html" title="utils.h" alt="" coords="300,83,356,112"/></map>
+<area shape="rect" id="node13" href="utils_8h.html" title="utils.h" alt="" coords="363,83,419,112"/><area shape="rect" id="node27" href="copy__mapped__value_8h.html" title="copy_mapped_value.h" alt="" coords="35,83,187,112"/><area shape="rect" id="node31" href="Exit_8h.html" title="Exit.h" alt="" coords="443,83,499,112"/></map>
 </div>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="namespaces"></a>
@@ -103,18 +106,10 @@ Namespaces</h2></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a6cf45fb929ad6c5ae09cad2a6edd710b">utils::timestamp</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a667c6930d70ec2a3da5231fb52b1395c">utils::containsKey</a> (const QStringList &amp;args, const char *key)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a741bf006e9ad882e7d6fdaaca495b36f">utils::valueForKey</a> (const QStringList &amp;args, const char *key)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aff921d82a4ca404a502da530ec854aac">utils::contains_key</a> (const QStringList &amp;args, const char *key)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aff37796169b2366f68a2c3f82ab12873">utils::csl_2_vec</a> (QSqlQuery &amp;query, int index, const char *separator, std::vector&lt; int &gt; &amp;vec, int &amp;val)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a513d0f021a7cabd5ee52676487aee2a4">utils::copy_mapped_value</a> (const QStringList &amp;args, const std::string &amp;key, QString &amp;dest)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a23d4c0efb4c13c145f09f0b8f51275ea">utils::copy_mapped_value</a> (const QStringList &amp;args, const char *key, string &amp;dest)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a5eacbebce81dd5aaa7f2b965783545c8">utils::copy_mapped_value</a> (const QStringList &amp;args, const std::string &amp;key, std::string &amp;dest)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a7329134b4e06495a48bb1a19f692132f">utils::copy_mapped_value</a> (const QStringList &amp;args, const char *key, int32_t &amp;dest)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a24c4d8af43d14ddcc1e3912e2cc14fc4">utils::copy_mapped_value</a> (const QStringList &amp;args, const char *key, uint32_t &amp;dest)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aeda9cb198eb2930971ef4cda4bbfe607">utils::copy_mapped_value</a> (const QStringList &amp;args, const char *key, float &amp;dest)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a0637c77c6e8873c88763555af6397bbd">utils::exit_if_no_cachefile_specified</a> (const QStringList &amp;args, const string &amp;key, string &amp;dest, const string &amp;functionName)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a761793ef702b28f0e988054cb192630e">utils::usage</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a5f143f5a2596a65f4376b96919bd9910">utils::Exit</a> (const char *msg, int32_t error_code)</td></tr>
 </table>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -134,7 +129,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 19 2014 13:55:18 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 25 2014 08:45:06 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

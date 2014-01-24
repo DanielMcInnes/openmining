@@ -1,9 +1,12 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$cube_8cpp.html" title="cube.cpp" alt="" coords="5,83,80,112"/>
-<area shape="rect" id="node5" href="$database_8cpp.html" title="database.cpp" alt="" coords="104,83,203,112"/>
-<area shape="rect" id="node7" href="$elevation_8cpp.html" title="elevation.cpp" alt="" coords="227,83,325,112"/>
-<area shape="rect" id="node9" href="$location_8cpp.html" title="location.cpp" alt="" coords="349,83,440,112"/>
-<area shape="rect" id="node11" href="$main_8cpp.html" title="main.cpp" alt="" coords="464,83,539,112"/>
-<area shape="rect" id="node13" href="$simpleplot_8cpp.html" title="simpleplot.cpp" alt="" coords="563,83,669,112"/>
-<area shape="rect" id="node15" href="$utils_8cpp.html" title="utils/utils.cpp" alt="" coords="693,83,792,112"/>
+<area shape="rect" id="node3" href="$cube_8cpp.html" title="cube.cpp" alt="" coords="5,160,80,189"/>
+<area shape="rect" id="node5" href="$find__or__exit_8h.html" title="utils/find_or_exit.h" alt="" coords="29,83,157,112"/>
+<area shape="rect" id="node8" href="$database_8cpp.html" title="database.cpp" alt="" coords="181,83,280,112"/>
+<area shape="rect" id="node10" href="$elevation_8cpp.html" title="elevation.cpp" alt="" coords="304,83,403,112"/>
+<area shape="rect" id="node12" href="$location_8cpp.html" title="location.cpp" alt="" coords="427,83,517,112"/>
+<area shape="rect" id="node14" href="$main_8cpp.html" title="main.cpp" alt="" coords="541,83,616,112"/>
+<area shape="rect" id="node16" href="$check__argv_8h.html" title="utils/check_argv.h" alt="" coords="640,83,768,112"/>
+<area shape="rect" id="node18" href="$copy__mapped__value_8cpp.html" title="utils/copy_mapped_value.cpp" alt="" coords="792,83,987,112"/>
+<area shape="rect" id="node20" href="$find__or__exit_8cpp.html" title="utils/find_or_exit.cpp" alt="" coords="1011,83,1152,112"/>
+<area shape="rect" id="node22" href="$utils_8cpp.html" title="utils/utils.cpp" alt="" coords="1176,83,1275,112"/>
 </map>

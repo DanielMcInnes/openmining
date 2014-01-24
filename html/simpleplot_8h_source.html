@@ -47,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -115,39 +116,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033 <span class="comment">// my includes</span>
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="elevation_8h.html">elevation.h</a>&quot;</span> <span class="comment">// Longitudes object</span>
 <a name="l00035"></a>00035 
-<a name="l00036"></a><a class="code" href="classRosenbrock.html">00036</a> <span class="keyword">class </span><a class="code" href="classRosenbrock.html">Rosenbrock</a> : <span class="keyword">public</span> Qwt3D::Function
-<a name="l00037"></a>00037 {
-<a name="l00038"></a>00038 <span class="keyword">public</span>:
-<a name="l00039"></a><a class="code" href="classRosenbrock.html#a0ce7b4f62716dcebf58f552bcb873757">00039</a>   <a class="code" href="classRosenbrock.html#a0ce7b4f62716dcebf58f552bcb873757">Rosenbrock</a>(Qwt3D::SurfacePlot* pw, <a class="code" href="classLongitudes.html">Longitudes</a>&amp; longitudes, uint32_t coarseness) : Function(pw), <a class="code" href="classRosenbrock.html#a1235809baf90defa21025246069ea3dd">m_longitudes</a>(longitudes), <a class="code" href="classRosenbrock.html#a55c1158694615ce9fd5d5fc05023147a">m_coarseness</a>(coarseness) 
-<a name="l00040"></a>00040   {
-<a name="l00041"></a>00041   }
-<a name="l00042"></a>00042 
-<a name="l00043"></a><a class="code" href="classRosenbrock.html#a1235809baf90defa21025246069ea3dd">00043</a>   <a class="code" href="classLongitudes.html">Longitudes</a>&amp; <a class="code" href="classRosenbrock.html#a1235809baf90defa21025246069ea3dd">m_longitudes</a>;
-<a name="l00044"></a>00044 
-<a name="l00045"></a><a class="code" href="classRosenbrock.html#ab583f473d97114aad858d383f4fbc9b1">00045</a>   <span class="keywordtype">double</span> <a class="code" href="classRosenbrock.html#ab583f473d97114aad858d383f4fbc9b1">operator()</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y)
-<a name="l00046"></a>00046   {
-<a name="l00047"></a>00047     <span class="comment">//return log((1-x)*(1-x) + 100 * (y - x*x)*(y - x*x)) / 8;</span>
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049     <span class="comment">/*</span>
-<a name="l00050"></a>00050 <span class="comment">    longitude_t lo = x;</span>
-<a name="l00051"></a>00051 <span class="comment">    latitude_t la = y;</span>
-<a name="l00052"></a>00052 <span class="comment">    return m_longitudes.getElevation(lo,la); </span>
-<a name="l00053"></a>00053 <span class="comment">    */</span>
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055     <span class="keywordflow">return</span> <a class="code" href="classRosenbrock.html#a1235809baf90defa21025246069ea3dd">m_longitudes</a>.<a class="code" href="classLongitudes.html#a159795777ac3d68410a3bad0307ed9a0">getElevation</a>(x,y, <a class="code" href="classRosenbrock.html#a55c1158694615ce9fd5d5fc05023147a">m_coarseness</a>);
-<a name="l00056"></a>00056   }
-<a name="l00057"></a><a class="code" href="classRosenbrock.html#a55c1158694615ce9fd5d5fc05023147a">00057</a>   uint32_t <a class="code" href="classRosenbrock.html#a55c1158694615ce9fd5d5fc05023147a">m_coarseness</a>;
-<a name="l00058"></a>00058 };
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060 
-<a name="l00061"></a><a class="code" href="classPlot.html">00061</a> <span class="keyword">class </span><a class="code" href="classPlot.html">Plot</a> : <span class="keyword">public</span> Qwt3D::SurfacePlot
-<a name="l00062"></a>00062 {
-<a name="l00063"></a>00063 <span class="keyword">public</span>:
-<a name="l00064"></a>00064   <a class="code" href="classPlot.html#a459bbf579e5da029288633772dcda1f3">Plot</a>(QStringList&amp; args, <a class="code" href="classLongitudes.html">Longitudes</a>&amp; longitudes);
-<a name="l00065"></a><a class="code" href="classPlot.html#ad4a169c6e2a220a1801ec4d09fa639ff">00065</a>   <a class="code" href="classLongitudes.html">Longitudes</a>&amp; <a class="code" href="classPlot.html#ad4a169c6e2a220a1801ec4d09fa639ff">m_longitudes</a>;
-<a name="l00066"></a>00066 };
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068 <span class="preprocessor">#endif</span>
+<a name="l00036"></a>00036 <span class="keyword">class </span><a class="code" href="classCube.html">Cube</a>;
+<a name="l00037"></a>00037 <span class="keyword">class </span><a class="code" href="classLongitudes.html">Longitudes</a>;
+<a name="l00038"></a><a class="code" href="simpleplot_8h.html#a80c0901c05f03ca220b863b69f2a4fe4">00038</a> <span class="keyword">typedef</span> double (<a class="code" href="classLongitudes.html">Longitudes</a>::*<a class="code" href="simpleplot_8h.html#a80c0901c05f03ca220b863b69f2a4fe4">fp_t</a>)(<span class="keywordtype">double</span>&amp;, <span class="keywordtype">double</span>&amp;, uint32_t);
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="classGridMappingFunction.html">00040</a> <span class="keyword">class </span><a class="code" href="classGridMappingFunction.html">GridMappingFunction</a> : <span class="keyword">public</span> Qwt3D::Function
+<a name="l00041"></a>00041 {
+<a name="l00042"></a>00042 <span class="keyword">public</span>:
+<a name="l00043"></a><a class="code" href="classGridMappingFunction.html#a84ba182f50f166b016cfaef1db349544">00043</a>   <a class="code" href="classGridMappingFunction.html#a84ba182f50f166b016cfaef1db349544">GridMappingFunction</a>(Qwt3D::SurfacePlot* pw, <a class="code" href="classLongitudes.html">Longitudes</a>&amp; locations, uint32_t coarseness) : Function(pw), <a class="code" href="classGridMappingFunction.html#a8f1789fd639ed4c867213967b2ed7ef6">m_locations</a>(locations), <a class="code" href="classGridMappingFunction.html#a0de3dbf00b210e6fadd8f77906a47614">m_coarseness</a>(coarseness) 
+<a name="l00044"></a>00044   {
+<a name="l00045"></a>00045   }
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="classGridMappingFunction.html#a8f1789fd639ed4c867213967b2ed7ef6">00047</a>   <a class="code" href="classLongitudes.html">Longitudes</a>&amp; <a class="code" href="classGridMappingFunction.html#a8f1789fd639ed4c867213967b2ed7ef6">m_locations</a>;
+<a name="l00048"></a>00048   <span class="keywordtype">double</span> <a class="code" href="classGridMappingFunction.html#a2d02b84a654e6cce893861897eb7c57d">operator()</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y);
+<a name="l00049"></a><a class="code" href="classGridMappingFunction.html#a0de3dbf00b210e6fadd8f77906a47614">00049</a>   uint32_t <a class="code" href="classGridMappingFunction.html#a0de3dbf00b210e6fadd8f77906a47614">m_coarseness</a>;
+<a name="l00050"></a>00050 };
+<a name="l00051"></a>00051 
+<a name="l00052"></a><a class="code" href="classPlot.html">00052</a> <span class="keyword">class </span><a class="code" href="classPlot.html">Plot</a> : <span class="keyword">public</span> Qwt3D::SurfacePlot
+<a name="l00053"></a>00053 {
+<a name="l00054"></a>00054 <span class="keyword">public</span>:
+<a name="l00055"></a>00055   <a class="code" href="classPlot.html#a5f52af22d273cdfc1358bdb841af9f45">Plot</a>(QStringList&amp; args, <a class="code" href="classCube.html">Cube</a>&amp; cube, <a class="code" href="classLongitudes.html">Longitudes</a>&amp; locations);
+<a name="l00056"></a><a class="code" href="classPlot.html#a532a62b3f369455abdc96e214ff67352">00056</a>   double (*<a class="code" href="classPlot.html#a532a62b3f369455abdc96e214ff67352">funcptr</a>)(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y);
+<a name="l00057"></a>00057 };
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -166,7 +158,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 19 2014 13:55:17 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 25 2014 08:45:06 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

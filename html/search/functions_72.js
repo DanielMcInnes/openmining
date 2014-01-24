@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rosenbrock',['Rosenbrock',['../classRosenbrock.html#a0ce7b4f62716dcebf58f552bcb873757',1,'Rosenbrock']]]
+  ['ranges',['ranges',['../classCube.html#a8cd029116cba93a85af8ac218de42dc6',1,'Cube']]],
+  ['runchecks',['runchecks',['../main_8cpp.html#afe8b3c553fc274d0c04784275b96be43',1,'main.cpp']]]
 ];

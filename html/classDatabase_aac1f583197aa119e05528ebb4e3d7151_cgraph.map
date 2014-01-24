@@ -1,3 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$namespaceutils.html#a741bf006e9ad882e7d6fdaaca495b36f" title="utils::valueForKey" alt="" coords="199,5,324,35"/>
+<area shape="rect" id="node3" href="$namespaceutils.html#a2e2be7bbb28fbaf474544fd959c33b7b" title="utils::get_mapped_value" alt="" coords="197,32,360,61"/>
+<area shape="rect" id="node5" href="$namespaceutils.html#a513d0f021a7cabd5ee52676487aee2a4" title="utils::copy_mapped_value" alt="" coords="408,5,581,35"/>
+<area shape="rect" id="node9" href="$namespaceutils.html#af0c8ceb6e41cc65ccd0dac2bb2d930dc" title="utils::Exit" alt="" coords="456,59,533,88"/>
+<area shape="rect" id="node7" href="$namespaceutils.html#a741bf006e9ad882e7d6fdaaca495b36f" title="utils::valueForKey" alt="" coords="631,5,756,35"/>
 </map>

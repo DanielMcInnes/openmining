@@ -1,11 +1,13 @@
 <map id="G" name="G">
-<area shape="rect" id="node13" href="$location_8h.html" title="location.h" alt="" coords="622,83,699,112"/>
-<area shape="rect" id="node43" href="$utils_8h.html" title="utils/utils.h" alt="" coords="1060,83,1146,112"/>
-<area shape="rect" id="node54" href="$load_8h.html" title="utils/load.h" alt="" coords="1408,83,1494,112"/>
-<area shape="rect" id="node59" href="$save_8h.html" title="utils/save.h" alt="" coords="1843,83,1931,112"/>
-<area shape="rect" id="node62" href="$same__size_8h.html" title="utils/same_size.h" alt="" coords="1568,83,1691,112"/>
-<area shape="rect" id="node64" href="$percent_8h.html" title="utils/percent.h" alt="" coords="1715,83,1819,112"/>
-<area shape="rect" id="node66" href="$update__progress_8h.html" title="utils/update_progress.h" alt="" coords="1176,83,1334,112"/>
-<area shape="rect" id="node34" href="$mytypes_8h.html" title="mytypes.h" alt="" coords="99,237,182,267"/>
-<area shape="rect" id="node38" href="$cube_8h.html" title="cube.h" alt="" coords="420,160,482,189"/>
+<area shape="rect" id="node13" href="$location_8h.html" title="location.h" alt="" coords="961,83,1038,112"/>
+<area shape="rect" id="node47" href="$utils_8h.html" title="utils/utils.h" alt="" coords="1352,83,1437,112"/>
+<area shape="rect" id="node58" href="$load_8h.html" title="utils/load.h" alt="" coords="1461,83,1546,112"/>
+<area shape="rect" id="node63" href="$save_8h.html" title="utils/save.h" alt="" coords="1621,83,1709,112"/>
+<area shape="rect" id="node66" href="$same__size_8h.html" title="utils/same_size.h" alt="" coords="1733,83,1856,112"/>
+<area shape="rect" id="node68" href="$percent_8h.html" title="utils/percent.h" alt="" coords="1880,83,1984,112"/>
+<area shape="rect" id="node70" href="$update__progress_8h.html" title="utils/update_progress.h" alt="" coords="2008,83,2165,112"/>
+<area shape="rect" id="node73" href="$Exit_8h.html" title="utils/Exit.h" alt="" coords="2189,83,2272,112"/>
+<area shape="rect" id="node76" href="$copy__mapped__value_8h.html" title="utils/copy_mapped_value.h" alt="" coords="30,160,209,189"/>
+<area shape="rect" id="node34" href="$mytypes_8h.html" title="mytypes.h" alt="" coords="505,237,588,267"/>
+<area shape="rect" id="node38" href="$cube_8h.html" title="cube.h" alt="" coords="934,160,996,189"/>
 </map>

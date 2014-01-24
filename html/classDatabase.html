@@ -47,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -79,7 +80,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Database Class Reference</div>  </div>
 </div><!--header-->
@@ -96,6 +98,9 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDatabase.html#a7608726d1eaee63add2406b1afc8482f">m_initialised</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QSqlDatabase&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDatabase.html#a7357cbeca05937556f66e2fe2288bdb5">m_db</a></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDatabase.html#a3fdb714d30665579e7fe0baaba847cfb">m_requiredArgs</a> = { &quot;-host&quot;, &quot;-database&quot;, &quot;-username&quot;, &quot;-password&quot; }</td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aac1f583197aa119e05528ebb4e3d7151"></a><!-- doxytag: member="Database::Database" ref="aac1f583197aa119e05528ebb4e3d7151" args="(const QStringList &amp;args)" -->
@@ -118,7 +123,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDatabase_aac1f583197aa119e05528ebb4e3d7151_cgraph.png" border="0" usemap="#classDatabase_aac1f583197aa119e05528ebb4e3d7151_cgraph" alt=""/></div>
 <map name="classDatabase_aac1f583197aa119e05528ebb4e3d7151_cgraph" id="classDatabase_aac1f583197aa119e05528ebb4e3d7151_cgraph">
-<area shape="rect" id="node3" href="namespaceutils.html#a741bf006e9ad882e7d6fdaaca495b36f" title="utils::valueForKey" alt="" coords="199,5,324,35"/></map>
+<area shape="rect" id="node3" href="namespaceutils.html#a2e2be7bbb28fbaf474544fd959c33b7b" title="utils::get_mapped_value" alt="" coords="197,32,360,61"/><area shape="rect" id="node5" href="namespaceutils.html#a513d0f021a7cabd5ee52676487aee2a4" title="utils::copy_mapped_value" alt="" coords="408,5,581,35"/><area shape="rect" id="node9" href="namespaceutils.html#af0c8ceb6e41cc65ccd0dac2bb2d930dc" title="utils::Exit" alt="" coords="456,59,533,88"/><area shape="rect" id="node7" href="namespaceutils.html#a741bf006e9ad882e7d6fdaaca495b36f" title="utils::valueForKey" alt="" coords="631,5,756,35"/></map>
 </div>
 </p>
 
@@ -151,6 +156,19 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a3fdb714d30665579e7fe0baaba847cfb"></a><!-- doxytag: member="Database::m_requiredArgs" ref="a3fdb714d30665579e7fe0baaba847cfb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; <a class="el" href="classDatabase.html#a3fdb714d30665579e7fe0baaba847cfb">Database::m_requiredArgs</a> = { &quot;-host&quot;, &quot;-database&quot;, &quot;-username&quot;, &quot;-password&quot; }<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="database_8h_source.html">database.h</a></li>
 <li><a class="el" href="database_8cpp.html">database.cpp</a></li>
@@ -173,7 +191,7 @@ Here is the call graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 19 2014 13:55:18 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 25 2014 08:45:06 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -47,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -93,9 +94,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCube.html#a92843c8cd2efc3116d02e72fa0ed00a1">Print</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="mytypes_8h.html#a369e99670097571f018c763ebf3c84f9">longitude_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCube.html#a808267eb757ed6d52a465e353a72a86d">longitudeRange</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="mytypes_8h.html#aeb5523d03c5203ff0194eab1e163a2ea">latitude_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCube.html#a9dec2062ff5ef34cfb94a7b5680bb5f2">latitudeRange</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="mytypes_8h.html#a177cce7f9beefa20663af966ef5e0792">elevation_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCube.html#ad47b7fb8508fadb0b6c54393970bc22f">elevationRange</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCube.html#a8cd029116cba93a85af8ac218de42dc6">ranges</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCube.html#a06f3d86fb63e3aad08623610aa3c17b4">Cube</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCube.html#a38d70f33051f213dcad96ca34a1c103a">Load</a> (const QStringList &amp;args)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCube.html#a28149322ac565e1aa5b6427e67d9644a">Print</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCube.html#adbca97da5bc4d171591609f91a08249a">UpdateMinMax</a> (const <a class="el" href="mytypes_8h.html#a369e99670097571f018c763ebf3c84f9">longitude_t</a> &amp;longitude, const <a class="el" href="mytypes_8h.html#aeb5523d03c5203ff0194eab1e163a2ea">latitude_t</a> &amp;latitude, const <a class="el" href="mytypes_8h.html#a177cce7f9beefa20663af966ef5e0792">elevation_t</a> &amp;elevation)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -113,6 +118,7 @@ Private Member Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCube.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCube.html#aef067ecef18e822670ba3cfd8dbac245">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classCube.html">Cube</a> &amp;cube)</td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a06f3d86fb63e3aad08623610aa3c17b4"></a><!-- doxytag: member="Cube::Cube" ref="a06f3d86fb63e3aad08623610aa3c17b4" args="()" -->
@@ -132,6 +138,56 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ad47b7fb8508fadb0b6c54393970bc22f"></a><!-- doxytag: member="Cube::elevationRange" ref="ad47b7fb8508fadb0b6c54393970bc22f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mytypes_8h.html#a177cce7f9beefa20663af966ef5e0792">elevation_t</a> <a class="el" href="classCube.html#ad47b7fb8508fadb0b6c54393970bc22f">Cube::elevationRange</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCube_ad47b7fb8508fadb0b6c54393970bc22f_icgraph.png" border="0" usemap="#classCube_ad47b7fb8508fadb0b6c54393970bc22f_icgraph" alt=""/></div>
+<map name="classCube_ad47b7fb8508fadb0b6c54393970bc22f_icgraph" id="classCube_ad47b7fb8508fadb0b6c54393970bc22f_icgraph">
+<area shape="rect" id="node3" href="classCube.html#a8cd029116cba93a85af8ac218de42dc6" title="Cube::ranges" alt="" coords="207,5,305,35"/><area shape="rect" id="node5" href="cube_8h.html#aef067ecef18e822670ba3cfd8dbac245" title="operator\&lt;\&lt;" alt="" coords="355,5,440,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9dec2062ff5ef34cfb94a7b5680bb5f2"></a><!-- doxytag: member="Cube::latitudeRange" ref="a9dec2062ff5ef34cfb94a7b5680bb5f2" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mytypes_8h.html#aeb5523d03c5203ff0194eab1e163a2ea">latitude_t</a> <a class="el" href="classCube.html#a9dec2062ff5ef34cfb94a7b5680bb5f2">Cube::latitudeRange</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCube_a9dec2062ff5ef34cfb94a7b5680bb5f2_icgraph.png" border="0" usemap="#classCube_a9dec2062ff5ef34cfb94a7b5680bb5f2_icgraph" alt=""/></div>
+<map name="classCube_a9dec2062ff5ef34cfb94a7b5680bb5f2_icgraph" id="classCube_a9dec2062ff5ef34cfb94a7b5680bb5f2_icgraph">
+<area shape="rect" id="node3" href="classCube.html#a8cd029116cba93a85af8ac218de42dc6" title="Cube::ranges" alt="" coords="196,5,295,35"/><area shape="rect" id="node5" href="cube_8h.html#aef067ecef18e822670ba3cfd8dbac245" title="operator\&lt;\&lt;" alt="" coords="344,5,429,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a38d70f33051f213dcad96ca34a1c103a"></a><!-- doxytag: member="Cube::Load" ref="a38d70f33051f213dcad96ca34a1c103a" args="(const QStringList &amp;args)" -->
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +208,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCube_a38d70f33051f213dcad96ca34a1c103a_cgraph.png" border="0" usemap="#classCube_a38d70f33051f213dcad96ca34a1c103a_cgraph" alt=""/></div>
 <map name="classCube_a38d70f33051f213dcad96ca34a1c103a_cgraph" id="classCube_a38d70f33051f213dcad96ca34a1c103a_cgraph">
-<area shape="rect" id="node3" href="namespaceutils.html#a513d0f021a7cabd5ee52676487aee2a4" title="utils::copy_mapped_value" alt="" coords="144,5,317,35"/><area shape="rect" id="node5" href="namespaceutils.html#a741bf006e9ad882e7d6fdaaca495b36f" title="utils::valueForKey" alt="" coords="367,5,492,35"/></map>
+<area shape="rect" id="node3" href="namespaceutils.html#a513d0f021a7cabd5ee52676487aee2a4" title="utils::copy_mapped_value" alt="" coords="144,5,317,35"/><area shape="rect" id="node7" href="namespaceutils.html#a7da744c53fc28b40b381ae8d2b57600c" title="utils::find_or_exit" alt="" coords="171,59,291,88"/><area shape="rect" id="node5" href="namespaceutils.html#a741bf006e9ad882e7d6fdaaca495b36f" title="utils::valueForKey" alt="" coords="367,5,492,35"/><area shape="rect" id="node9" href="namespaceutils.html#a761793ef702b28f0e988054cb192630e" title="utils::usage" alt="" coords="385,59,473,88"/><area shape="rect" id="node11" href="namespaceutils.html#af0c8ceb6e41cc65ccd0dac2bb2d930dc" title="utils::Exit" alt="" coords="391,112,468,141"/></map>
 </div>
 </p>
 
@@ -161,21 +217,21 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCube_a38d70f33051f213dcad96ca34a1c103a_icgraph.png" border="0" usemap="#classCube_a38d70f33051f213dcad96ca34a1c103a_icgraph" alt=""/></div>
 <map name="classCube_a38d70f33051f213dcad96ca34a1c103a_icgraph" id="classCube_a38d70f33051f213dcad96ca34a1c103a_icgraph">
-<area shape="rect" id="node3" href="classLocations.html#a2edb339d12c2807f25d8234f5a35a99e" title="Locations::load" alt="" coords="145,5,255,35"/><area shape="rect" id="node5" href="classLongitudes.html#aae603cc6378322c411547d3548b5a885" title="Longitudes::load" alt="" coords="304,5,421,35"/><area shape="rect" id="node7" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="469,5,520,35"/></map>
+<area shape="rect" id="node3" href="classLocations.html#a2edb339d12c2807f25d8234f5a35a99e" title="Locations::load" alt="" coords="145,5,255,35"/><area shape="rect" id="node5" href="classLongitudes.html#a2212165bf0a0b92b42b7fcb22be24caa" title="Longitudes::load" alt="" coords="304,5,421,35"/><area shape="rect" id="node7" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="469,5,520,35"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a28149322ac565e1aa5b6427e67d9644a"></a><!-- doxytag: member="Cube::Print" ref="a28149322ac565e1aa5b6427e67d9644a" args="()" -->
+<a class="anchor" id="a808267eb757ed6d52a465e353a72a86d"></a><!-- doxytag: member="Cube::longitudeRange" ref="a808267eb757ed6d52a465e353a72a86d" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classCube.html#a28149322ac565e1aa5b6427e67d9644a">Cube::Print</a> </td>
+          <td class="memname"><a class="el" href="mytypes_8h.html#a369e99670097571f018c763ebf3c84f9">longitude_t</a> <a class="el" href="classCube.html#a808267eb757ed6d52a465e353a72a86d">Cube::longitudeRange</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -184,9 +240,68 @@ Here is the caller graph for this function:</div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classCube_a28149322ac565e1aa5b6427e67d9644a_icgraph.png" border="0" usemap="#classCube_a28149322ac565e1aa5b6427e67d9644a_icgraph" alt=""/></div>
-<map name="classCube_a28149322ac565e1aa5b6427e67d9644a_icgraph" id="classCube_a28149322ac565e1aa5b6427e67d9644a_icgraph">
+<div class="center"><img src="classCube_a808267eb757ed6d52a465e353a72a86d_icgraph.png" border="0" usemap="#classCube_a808267eb757ed6d52a465e353a72a86d_icgraph" alt=""/></div>
+<map name="classCube_a808267eb757ed6d52a465e353a72a86d_icgraph" id="classCube_a808267eb757ed6d52a465e353a72a86d_icgraph">
+<area shape="rect" id="node3" href="classCube.html#a8cd029116cba93a85af8ac218de42dc6" title="Cube::ranges" alt="" coords="207,5,305,35"/><area shape="rect" id="node7" href="classPlot.html#a5f52af22d273cdfc1358bdb841af9f45" title="Plot::Plot" alt="" coords="219,59,293,88"/><area shape="rect" id="node5" href="cube_8h.html#aef067ecef18e822670ba3cfd8dbac245" title="operator\&lt;\&lt;" alt="" coords="355,5,440,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a92843c8cd2efc3116d02e72fa0ed00a1"></a><!-- doxytag: member="Cube::Print" ref="a92843c8cd2efc3116d02e72fa0ed00a1" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classCube.html#a92843c8cd2efc3116d02e72fa0ed00a1">Cube::Print</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCube_a92843c8cd2efc3116d02e72fa0ed00a1_icgraph.png" border="0" usemap="#classCube_a92843c8cd2efc3116d02e72fa0ed00a1_icgraph" alt=""/></div>
+<map name="classCube_a92843c8cd2efc3116d02e72fa0ed00a1_icgraph" id="classCube_a92843c8cd2efc3116d02e72fa0ed00a1_icgraph">
 <area shape="rect" id="node3" href="classLocations.html#a75957ee8633ab31db6b66814e93f857a" title="Locations::print" alt="" coords="143,5,252,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8cd029116cba93a85af8ac218de42dc6"></a><!-- doxytag: member="Cube::ranges" ref="a8cd029116cba93a85af8ac218de42dc6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="classCube.html#a8cd029116cba93a85af8ac218de42dc6">Cube::ranges</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCube_a8cd029116cba93a85af8ac218de42dc6_cgraph.png" border="0" usemap="#classCube_a8cd029116cba93a85af8ac218de42dc6_cgraph" alt=""/></div>
+<map name="classCube_a8cd029116cba93a85af8ac218de42dc6_cgraph" id="classCube_a8cd029116cba93a85af8ac218de42dc6_cgraph">
+<area shape="rect" id="node3" href="classCube.html#a808267eb757ed6d52a465e353a72a86d" title="Cube::longitudeRange" alt="" coords="156,5,305,35"/><area shape="rect" id="node5" href="classCube.html#a9dec2062ff5ef34cfb94a7b5680bb5f2" title="Cube::latitudeRange" alt="" coords="160,59,301,88"/><area shape="rect" id="node7" href="classCube.html#ad47b7fb8508fadb0b6c54393970bc22f" title="Cube::elevationRange" alt="" coords="156,112,305,141"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCube_a8cd029116cba93a85af8ac218de42dc6_icgraph.png" border="0" usemap="#classCube_a8cd029116cba93a85af8ac218de42dc6_icgraph" alt=""/></div>
+<map name="classCube_a8cd029116cba93a85af8ac218de42dc6_icgraph" id="classCube_a8cd029116cba93a85af8ac218de42dc6_icgraph">
+<area shape="rect" id="node3" href="cube_8h.html#aef067ecef18e822670ba3cfd8dbac245" title="operator\&lt;\&lt;" alt="" coords="155,5,240,35"/></map>
 </div>
 </p>
 
@@ -252,6 +367,15 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCube_adbca97da5bc4d171591609f91a08249a_icgraph.png" border="0" usemap="#classCube_adbca97da5bc4d171591609f91a08249a_icgraph" alt=""/></div>
+<map name="classCube_adbca97da5bc4d171591609f91a08249a_icgraph" id="classCube_adbca97da5bc4d171591609f91a08249a_icgraph">
+<area shape="rect" id="node3" href="classLongitudes.html#ac645c59d6932f07b6ac0621f734614ec" title="Longitudes::operator=" alt="" coords="204,5,351,35"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <hr/><h2>Friends And Related Function Documentation</h2>
@@ -261,6 +385,33 @@ template&lt;class Archive &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">friend class boost::serialization::access<code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aef067ecef18e822670ba3cfd8dbac245"></a><!-- doxytag: member="Cube::operator&lt;&lt;" ref="aef067ecef18e822670ba3cfd8dbac245" args="(std::ostream &amp;os, const Cube &amp;cube)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classCube.html">Cube</a> &amp;&#160;</td>
+          <td class="paramname"><em>cube</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [friend]</code></td>
         </tr>
       </table>
 </div>
@@ -382,7 +533,7 @@ template&lt;class Archive &gt; </div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 19 2014 13:55:18 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 25 2014 08:45:06 for OpenMining by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
