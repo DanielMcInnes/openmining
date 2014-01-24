@@ -123,7 +123,7 @@ Casting & Conversions: The boost extensions allow you to unambiguously state you
 Features:
 - builds a 3D scale model of the mine surface, which changes over time as material is added / removed.
 - (planned) Allows replaying historical gps data. THe user can see trucks, shovels etc moving around the mine.
-- (planned) Allows the assignment of trucks to shovels, and all other operations permitted by MineOPS.
+- (planned) Allows the assignment of trucks to shovels.
 **/
 
 
