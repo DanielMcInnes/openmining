@@ -33,36 +33,27 @@
 // my includes
 #include "elevation.h" // Longitudes object
 
-class Rosenbrock : public Qwt3D::Function
+class Cube;
+class Longitudes;
+typedef double (Longitudes::*fp_t)(double&, double&, uint32_t);
+
+class GridMappingFunction : public Qwt3D::Function
 {
 public:
-  Rosenbrock(Qwt3D::SurfacePlot* pw, Longitudes& longitudes, uint32_t coarseness) : Function(pw), m_longitudes(longitudes), m_coarseness(coarseness) 
+  GridMappingFunction(Qwt3D::SurfacePlot* pw, Longitudes& locations, uint32_t coarseness) : Function(pw), m_locations(locations), m_coarseness(coarseness) 
   {
   }
 
-  Longitudes& m_longitudes;
-
-  double operator()(double x, double y)
-  {
-    //return log((1-x)*(1-x) + 100 * (y - x*x)*(y - x*x)) / 8;
-
-    /*
-    longitude_t lo = x;
-    latitude_t la = y;
-    return m_longitudes.getElevation(lo,la); 
-    */
-
-    return m_longitudes.getElevation(x,y, m_coarseness);
-  }
+  Longitudes& m_locations;
+  double operator()(double x, double y);
   uint32_t m_coarseness;
 };
-
 
 class Plot : public Qwt3D::SurfacePlot
 {
 public:
-  Plot(QStringList& args, Longitudes& longitudes);
-  Longitudes& m_longitudes;
+  Plot(QStringList& args, Cube& cube, Longitudes& locations);
+  double (*funcptr)(double x, double y);
 };
 
 #endif

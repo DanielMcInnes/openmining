@@ -20,19 +20,26 @@
 
 
 // standard library includes
+#include <iostream>
+#include <sstream>
+#include <string>
 
 // boost #includes
 
 
 // Qt includes
+#include <QStringList>
+#include <QString>
 
 // my includes
 #include "cube.h"
 #include "utils/utils.h"
+#include "utils/find_or_exit.h"
+#include "utils/copy_mapped_value.h"
 
 
 using namespace std;
-using utils::copy_mapped_value;
+using namespace utils;
 
 Cube::Cube() : m_minlat(INT32_MAX), m_maxlat(INT32_MIN), m_minlong(INT32_MAX), m_maxlong(INT32_MIN), m_minel(INT32_MAX), m_maxel(INT32_MIN), m_sidelength(0) {}
 
@@ -46,16 +53,16 @@ bool Cube::Load(const QStringList& args)
   {
     cout << "sidelength not specified." << endl;
   }
-  copy_mapped_value(args, "-minlat", m_minlat);
-  copy_mapped_value(args, "-maxlat", m_maxlat);
-  copy_mapped_value(args, "-minlong", m_minlong);
-  copy_mapped_value(args, "-maxlong", m_maxlong);
-  copy_mapped_value(args, "-minel", m_minel);
-  copy_mapped_value(args, "-maxel", m_maxel);
+  m_minlat  = find_or_exit(args, "-minlat",  FN);
+  m_maxlat  = find_or_exit(args, "-maxlat",  FN);
+  m_minlong = find_or_exit(args, "-minlong", FN);
+  m_maxlong = find_or_exit(args, "-maxlong", FN);
+  m_minel   = find_or_exit(args, "-minel",   FN);
+  m_maxel   = find_or_exit(args, "-maxel",   FN);
   return(true);
 }
 
-void Cube::Print()
+void Cube::Print() const
 {
   cout << FN << "m_minlat = " << m_minlat << endl;
   cout << FN << "m_maxlat = " << m_maxlat << endl;
@@ -73,6 +80,21 @@ void Cube::UpdateMinMax(const longitude_t& longitude, const latitude_t& latitude
   if (longitude > m_maxlong){ m_maxlong = longitude; }
   if (elevation < m_minel)  { m_minel 	= elevation; }
   if (elevation > m_maxel)  { m_maxel 	= elevation; }
+}
+
+string Cube::ranges() const
+{
+  ostringstream oss;
+  oss << "longitude range: " << longitudeRange() << 
+  " latitude range: " << latitudeRange() <<
+  " elevation range: " << elevationRange();
+  return oss.str();
+}
+
+std::ostream& operator<<(std::ostream& os, const Cube& cube)
+{
+  os << " m_minlong: " << cube.m_minlong << ", m_maxlong: " << cube.m_maxlong << ", m_minlat: " << cube.m_minlat << ", m_maxlat: " <<  cube.m_maxlat << ", m_minel: " <<  cube.m_minel << ", m_maxel: " << cube.m_maxel <<  ", ranges: " << cube.ranges();
+  return os;
 }
 
 

@@ -36,6 +36,7 @@ graphviz
 #include "utils/utils.h"
 #include "simpleplot.h"
 #include "elevation.h"
+#include "utils/Exit.h"
 
 using namespace std;
 using namespace utils;
@@ -126,6 +127,7 @@ Features:
 **/
 
 
+void runchecks();
 // sample data
 // latitude :    -116,745,993
 // latitude min: -117,000,000
@@ -138,6 +140,7 @@ Features:
 //elevation max:  100000 (1000m)
 int main(int argc, char *argv[])
 {
+  runchecks();
   string time1 = "Start time: " + timestamp();
   cout << FN << time1 << std::endl;
   QApplication app(argc, argv);
@@ -145,19 +148,23 @@ int main(int argc, char *argv[])
   Database db(args);
 
   Longitudes longitudes(args);
-  longitudes.load(args);
+  longitudes.load();
   cout << FN << "built longitudes:" << timestamp() << endl;
-  //longitudes.print();
+
+  Plot plot(args, longitudes.m_extremities, longitudes);
+  plot.show();
+  longitudes.saveIfUpdated();
+  return app.exec();
 
 /*  longitude_t lo = 543669354;
   latitude_t la = -116767356;
   cout << FN << "Longitudes test: lo: " << lo << " la: " << la << " elev: " << longitudes[lo][la] << endl;
   longitudes.print();
-*/
-      Plot plot(args, longitudes);
+      Plot plot(args);
       plot.resize(800,600);
       plot.show();
       return app.exec();
+*/
   std::string time2 = "Locations built. " + timestamp();
   std::string time3 = "Finished. " + timestamp();
 
@@ -169,4 +176,20 @@ int main(int argc, char *argv[])
   view.resize(800,600);
   view.show();
   return app.exec();
+}
+
+
+void runchecks()
+{
+  bool caught = false;
+  vector<int> vec(10);
+
+  try { 
+    vec.at(20) = 100;
+  }
+  catch(out_of_range& oor)
+  {
+    caught = true;
+  }
+  if (!caught) { Exit(FN, -1); }
 }

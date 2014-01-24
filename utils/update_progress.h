@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+
 namespace utils
 {
   template<class Tnewval, class Toldval>

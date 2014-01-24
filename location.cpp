@@ -35,10 +35,13 @@
 #include "utils/same_size.h"
 #include "utils/percent.h"
 #include "utils/update_progress.h"
+#include "utils/Exit.h"
+#include "utils/copy_mapped_value.h"
 
 using namespace std;
 using namespace utils;
 uint32_t Locations_dbg = 0;
+uint32_t Locations::m_numInvalidLocations = 0;
 
 Location::Location()
 {
@@ -47,7 +50,7 @@ Location::Location()
 
 Location::Location(const latitude_t& latitude, const longitude_t& longitude, const elevation_t& elevation) : m_latitude(latitude), m_longitude(longitude), m_elevation(elevation)
 {
-  //cout << FN << "constructor: long: " << longitude << " lat: " << latitude << " elev: " << elevation << endl;
+  cout << FN << "constructor: long: " << longitude << " lat: " << latitude << " elev: " << elevation << endl;
 }
 
 bool Location::inside(const Cube& cube)
@@ -80,7 +83,6 @@ bool Location::inside(const Cube& cube)
   return (retval);
 }
 
-uint32_t Locations::m_numInvalidLocations = 0;
 
 bool min_latitude(const Location& i, const Location& j) 
 {
@@ -97,10 +99,10 @@ bool min_elevation(const Location& i, const Location& j)
   return (i.m_elevation < j.m_elevation); 
 }
 
-Locations::Locations(const QStringList& args) : m_dbRowCount(0), m_dbNumRows(0)
+Locations::Locations(const QStringList& args) : m_dbRowCount(0), m_dbNumRows(0), m_filename("locations.cache")
 {
-  exit_if_no_cachefile_specified(args, m_key, m_filename, FN );
-  copy_mapped_value(args, "--locations-dbg", Locations_dbg);
+  copy_mapped_value(args, m_key, m_filename);
+  if (contains_key(args, "--locations-dbg")) Locations_dbg = true;
 }
 
 bool Locations::load(const QStringList& args)
@@ -115,25 +117,33 @@ bool Locations::load(const QStringList& args)
     cout << FN << "building object from db query: " << endl;
 
     m_validXYZ.Load(args);
+    cout << FN << m_validXYZ << endl;
 
-    QString str, strCountQuery;
-    if (copy_mapped_value(args, "--locations-count-query", strCountQuery))
+    QString str, strCountQuery = "SELECT COUNT(*) from shift_gps;";
+    copy_mapped_value(args, "--locations-count-query", strCountQuery);
+
+    QSqlQuery countQuery(strCountQuery);
+    while (countQuery.next())
     {
-      QSqlQuery countQuery(strCountQuery);
-      while (countQuery.next())
-      {
-        //QStringList stringList = query.value(index).toString().split(separator);
-        m_dbNumRows = countQuery.value(0).toUInt();
-        // QStringList stringList = query.value(index).toString().split(separator);
-      }
+      //QStringList stringList = query.value(index).toString().split(separator);
+      m_dbNumRows = countQuery.value(0).toUInt();
+      // QStringList stringList = query.value(index).toString().split(separator);
     }
-    copy_mapped_value(args, "--locations-query", str) || Exit("ERROR! no query specified in the command line arguments via --locations-query", -1);
+    cout << FN << " finished count query, m_dbNumRows == " << m_dbNumRows << endl;
+
+    const char* key = "--locations-query";
+    bool result = (utils::copy_mapped_value(args, key, str));
+    if (result == false) 
+    {
+      usage();
+      Exit("ERROR! no query specified in the command line arguments via --locations-query", -1);
+    }
     build(str);
 
     utils::save(*this, m_filename);
   }
 
-  if (containsKey(args, "--exitafterlocationsquery")) exit (0);
+  if (contains_key(args, "--exitafterlocationsquery")) exit (0);
   return (true);
 }
 //void save(){}
@@ -148,33 +158,38 @@ void Locations::build(QSqlQuery& query)
 {
   static uint32_t progress = 0;
   query.setForwardOnly(true);
+  cout << FN << ": started" << endl;
   while (query.next()) 
   {
+    cout << FN << ": 1" << endl;
     int32_t latitude = 0, longitude = 0, elevation = 0;
-    vector<int32_t> vecLatitudes, veclongitudes_t, vecLongitudes;
+    vector<int32_t> vecLatitudes, vecLongitudes, vecElevations;
 
     csl_2_vec(query, 0, ",", vecLatitudes,  latitude);
-    csl_2_vec(query, 1, ",", veclongitudes_t, longitude);
-    csl_2_vec(query, 2, ",", vecLongitudes, elevation);
-    if( ! same_size(vecLatitudes, veclongitudes_t, vecLongitudes))
+    csl_2_vec(query, 1, ",", vecLongitudes, longitude);
+    csl_2_vec(query, 2, ",", vecElevations, elevation);
+    if( ! same_size(vecLatitudes, vecLongitudes, vecElevations))
     {
-      cerr << "ERROR! db table has different numbers of latitudes, longitudes, and longitudes" << endl;
+      cerr << "ERROR! db table has different numbers of latitudes, longitudes, and elevations" << endl;
       exit (-1);
     }
       
     for (size_t i = 0; i < vecLatitudes.size(); i++) {
-      Location location (vecLatitudes[i], veclongitudes_t[i], vecLongitudes[i]);
+      Location location (vecLatitudes[i], vecLongitudes[i], vecElevations[i]);
       if (location.inside(m_validXYZ))
       {
+        cout << FN << ": location within bounds" << endl;
         m_locations.push_back(location);        
       }
       else
       {
+        cout << FN << ": location outside bounds" << endl;
         m_numInvalidLocations++;
       }
     }
     update_progress(percent(m_dbRowCount++,m_dbNumRows), progress, FN);
   }
+  cout << FN << ": finished" << endl;
 }
 
 void Locations::print(void) {

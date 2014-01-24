@@ -45,19 +45,13 @@ class Location;
 
 namespace utils{
   std::string timestamp(void);
-  bool containsKey(const QStringList& args, const char* key);
-  QString valueForKey(const QStringList& args, const char* key);
+  bool contains_key(const QStringList& args, const char* key);
   void csl_2_vec(QSqlQuery& query, int index, const char* separator, std::vector<int>& vec, int& val);
 
-  bool copy_mapped_value(const QStringList& args, const std::string& key, QString& dest);
-  bool copy_mapped_value(const QStringList& args, const std::string& key, std::string& dest);
-  bool copy_mapped_value(const QStringList& args, const char* key,        std::string& dest);
-  bool copy_mapped_value(const QStringList& args, const char* key,        int32_t& dest);
-  bool copy_mapped_value(const QStringList& args, const char* key,        uint32_t& dest);
-  bool copy_mapped_value(const QStringList& args, const char* key,        float& dest);
-
   void exit_if_no_cachefile_specified(const QStringList& args, const std::string& key, std::string& dest, const std::string& functionName);
-  bool Exit(const char* msg, int32_t error_code);
+
+/*
+  bool Exit(const char* msg, int32_t error_code);*/
   void usage();
   
 } // namespace

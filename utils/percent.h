@@ -6,7 +6,12 @@ namespace utils
   template<class T>
   T percent(T numerator, T denominator) 
   {
-    return ( (100 * numerator) / denominator); 
+    if (denominator) 
+    {
+      return ( (100 * numerator) / denominator); 
+    }
+    
+    return 0;
   }
 }
 

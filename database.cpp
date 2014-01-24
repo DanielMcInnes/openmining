@@ -18,23 +18,42 @@
 
 */
 
+// standard libarary includes
 #include <iostream>
+
+// boost includes
+
+// Qt includes
 #include <QString>
 #include <QStringList>
+
+// my includes
 #include "database.h"
-#include "utils/utils.h"
+#include "utils/utils.h" // FN
+#include "utils/Exit.h"
+//#include "utils/check_argv.h"
+#include "utils/get_mapped_value.h"
 
 using namespace std;
 using namespace utils;
+
 
 Database::Database(const QStringList& args) : m_initialised(false)
 {
   m_db = QSqlDatabase::addDatabase("QPSQL");
 
-  m_db.setHostName     (valueForKey(args,"-host"));
-  m_db.setDatabaseName (valueForKey(args,"-database"));
-  m_db.setUserName     (valueForKey(args,"-username"));
-  m_db.setPassword     (valueForKey(args,"-password"));
+  /*check_argv(args,FN, m_requiredArgs);
+  for (auto str : m_requiredArgs)
+  {
+    if (get_mapped_value(args, str.c_str()) == "")
+    {
+      Exit(str, -1);
+    }
+  }*/
+  m_db.setHostName     (get_mapped_value(args,"-host", FN));
+  m_db.setDatabaseName (get_mapped_value(args,"-database", FN));
+  m_db.setUserName     (get_mapped_value(args,"-username", FN));
+  m_db.setPassword     (get_mapped_value(args,"-password", FN));
 
   if (m_db.open() == 0) {
     std::cout << FN << "failed to open db" << std::endl;

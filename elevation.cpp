@@ -22,6 +22,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <stdexcept> // std::out_of_range
 
 // boost includes
 
@@ -31,6 +32,7 @@
 
 // my includes
 #include "elevation.h"
+#include "utils/copy_mapped_value.h"
 #include "utils/utils.h"
 #include "utils/load.h"
 #include "utils/save.h"
@@ -40,21 +42,36 @@
 using namespace std;
 using namespace utils;
 
-uint32_t Longitudes_dbg = 0;
-uint32_t Latitudes_dbg = 0;
+uint32_t Longitudes_dbg = false;
+uint32_t Latitudes_dbg = false;
 
 Latitudes emptyLatitudes;
-//typedef std::map<latitude_t, elevation_t> latitudes_t;
 longitudes_t dummy_longitudes = {{0, emptyLatitudes}};
 latitudes_t dummy_latitudes = {{0,0}};
 elevation_t dummy_elevation = 0;
-Longitudes::Longitudes(QStringList& args)
+
+Longitudes::Longitudes(QStringList& args) : m_filename("longitudes.cache"), m_args(args), changesNotSaved(false)
 {
-  exit_if_no_cachefile_specified(args, m_key, m_filename, FN );
-  copy_mapped_value(args, "--longitudes-dbg", Longitudes_dbg);
+  copy_mapped_value(args, m_key, m_filename);
+  if (contains_key(args, "--latitudes-dbg")) Latitudes_dbg = true;
+  if (contains_key(args, "--longitudes-dbg")) Longitudes_dbg = true;
 }
 
-bool Longitudes::load(const QStringList& args)
+bool Longitudes::saveIfUpdated()
+{
+  bool retval = false;
+  if( changesNotSaved )
+  {
+    retval = true;
+    cout << FN << " - saving..." << endl;
+    save(*this, m_filename);
+    cout << FN << " - finished." << endl;
+    changesNotSaved = false;
+  }
+  return retval;
+}
+
+bool Longitudes::load()
 {
   bool retval = false;
   if (utils::load(this, m_filename))
@@ -64,15 +81,15 @@ bool Longitudes::load(const QStringList& args)
   else
   {
     cout << FN << "building 'Longitudes' object from 'Locations' object" << endl;
-    Locations locations(args); 
-    if ((retval = locations.load(args)) == true) 
+    Locations locations(m_args); 
+    if ((retval = locations.load(m_args)) == true) 
     {
       cout << FN << "copying 'Locations' data to 'Longitudes' object " << endl;
       *this = locations;
-      save(*this, m_filename); 
+      utils::save(*this, m_filename); 
     }
   }
-  if (containsKey(args, "-exitafterbuildinglongitudes")) exit (0);
+  if (contains_key(m_args, "-exitafterbuildinglongitudes")) exit (0);
 
   return (retval);
 }
@@ -103,27 +120,24 @@ Longitudes& Longitudes::operator=(const Locations& locations)
   return(*this);
 }
 
-
 Latitudes& Longitudes::operator[](const longitude_t& longitude)
 {
   if (Longitudes_dbg) cout << FN << "calling Longitudes::operator[" << longitude << "]" << endl;
-  //return(find_or_return_default(m_longitudes, longitude, dummy_longitudes));
   return m_longitudes[longitude];
 }
 
 elevation_t& Latitudes::operator[](const latitude_t& latitude)
 {
   if (Latitudes_dbg) std::cout << FN <<  "calling Latitudes::operator[" << latitude << "], returning '" << m_latitudes[latitude] << "'."<< std::endl;
-  //return (find_or_return_default(m_latitudes, latitude, dummy_latitudes));
   return m_latitudes[latitude];
 }
  
-elevation_t Longitudes::getElevation(const longitude_t& longitude, const latitude_t& latitude, const uint32_t coarseness)
+double Longitudes::getElevation(double& longitude, double& latitude, const uint32_t coarseness)
 {
-  elevation_t elevation = INT32_MIN;
+  double elevation = INT32_MIN;
   try
   {
-    elevation = m_longitudes.at(longitude).m_latitudes.at(latitude);
+    elevation = m_plottedLongitudes.at(longitude).m_latitudes.at(latitude);
     
     if (Latitudes_dbg) cout << FN << ": found value at :" << longitude << ", " << latitude << endl;    
   }
@@ -139,10 +153,14 @@ elevation_t Longitudes::getElevation(const longitude_t& longitude, const latitud
       auto upper_latitude = latitudes.upper_bound(latitude + coarseness);
       for (auto iter_2 = lower_latitude; iter_2 != upper_latitude; ++iter_2)
       {
-        if (iter_2->second > elevation) { elevation = iter_2->second; }
+        if (iter_2->second > elevation) 
+        {
+          elevation = iter_2->second; 
+        }
       }
     }
-    if (Latitudes_dbg) cout << FN << ": no value found at :" << longitude << ", " << latitude << endl;    
+    m_plottedLongitudes[longitude][latitude] = elevation; // save our interpolated gps location in RAM. Later on we will save it to disk.
+    changesNotSaved = true;
   }
   if (Latitudes_dbg) cout << FN << ": returning " << elevation << endl;    
   return elevation;
@@ -150,5 +168,4 @@ elevation_t Longitudes::getElevation(const longitude_t& longitude, const latitud
 
 Latitudes::Latitudes()
 {
-//  copy_mapped_value(args, "--latitudes-dbg", Latitudes_dbg);
 }

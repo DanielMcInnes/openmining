@@ -102,7 +102,6 @@ private:
   template<class Archive>
   void serialize(Archive& ar, const unsigned int version)
   {
-    ar & m_validXYZ;
     ar & m_numInvalidLocations;
     ar & m_locations;
     Q_UNUSED(version);

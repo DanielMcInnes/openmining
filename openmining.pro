@@ -14,6 +14,8 @@ SOURCES = \
     main.cpp \
     modelview.cpp \
     simpleplot.cpp \
+    utils/copy_mapped_value.cpp \
+    utils/find_or_exit.cpp \
     utils/utils.cpp \
 
 HEADERS = \
@@ -24,6 +26,19 @@ HEADERS = \
     modelview.h \
     mytypes.h \
     simpleplot.h \
+    utils/between.h \
+    utils/check_argv.h \
+    utils/contains.h \
+    utils/copy_mapped_value.h \
+    utils/get_mapped_value.h \
+    utils/Exit.h \
+    utils/find_or_exit.h \
+    utils/find_or_return_default.h \
+    utils/load.h \
+    utils/percent.h \
+    utils/same_size.h \
+    utils/save.h \
+    utils/update_progress.h \
     utils/utils.h \
 
 # RESOURCES = model.qrc

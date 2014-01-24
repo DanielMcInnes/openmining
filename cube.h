@@ -22,6 +22,9 @@
 #define cube_h
 
 // standard library includes
+#include <iostream>
+#include <sstream>
+#include <string>
 
 // boost #includes
 #include <boost/archive/text_oarchive.hpp>
@@ -35,16 +38,28 @@
 class Cube
 {
 public:
+  //const member functions
+  void Print() const;
+  longitude_t longitudeRange() const { return m_maxlong - m_minlong; }
+  latitude_t latitudeRange()   const { return m_maxlat - m_minlat; } 
+  elevation_t elevationRange() const { return m_maxel - m_minel; }
+  std::string ranges() const;
+
+  // non-const member functions
   Cube();
-  friend class boost::serialization::access;
   bool Load(const QStringList& args);
-  void Print();
   void UpdateMinMax(const longitude_t& longitude, const latitude_t& latitude, const elevation_t& elevation);
+
+  // member variables
   latitude_t m_minlat, m_maxlat;
   longitude_t m_minlong, m_maxlong;
   elevation_t m_minel, m_maxel;
   int32_t m_sidelength;
 
+  // friends
+  friend std::ostream& operator<<(std::ostream& os, const Cube& cube);
+  friend class boost::serialization::access;
+ 
 private:
   // When the class Archive corresponds to an output archive, the
   // & operator is defined similar to <<.  Likewise, when the class Archive
@@ -61,5 +76,7 @@ private:
     Q_UNUSED(version);
   }
 };
+
+std::ostream& operator<<(std::ostream& os, const Cube& cube);
 
 #endif

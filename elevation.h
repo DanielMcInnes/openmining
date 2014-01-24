@@ -35,12 +35,13 @@
 // my includes
 #include "mytypes.h" // typedefs
 #include "cube.h" // 'Cube' member variable m_extremities
+#include "simpleplot.h" // m_plot
 
 class Locations;
 class Longitudes;
 class Latitudes;
 
-/*
+/**
   The 'Latitudes' class exists purely to enable the following syntactic sugar:
   Longitudes[some_longitude][some_latitude] = some_elevation;
   It doesn't have any use apart from that.
@@ -75,17 +76,20 @@ public:
   Longitudes();
   Longitudes(QStringList& args);
   Longitudes& operator=(const Locations& locations);
-  bool load(const QStringList& args);
+  bool load();
+  bool saveIfUpdated();
   void print(void);
   Cube m_extremities;
-  elevation_t getElevation(const longitude_t& longitude, const latitude_t& latitude, const uint32_t coarseness);
+  double getElevation(double& longitude, double& latitude, const uint32_t coarseness);
 
 private:
   Latitudes& operator[](const longitude_t& longitude);
   longitudes_t m_longitudes; // m_longitudes[long][lat] = elevation
+  longitudes_t m_plottedLongitudes; // m_longitudes[long][lat] = elevation
   const char* m_key = "--longitudes-filename";
   std::string m_filename;  
-
+  QStringList& m_args;
+  bool changesNotSaved;
   // When the class Archive corresponds to an output archive, the
   // & operator is defined similar to <<.  Likewise, when the class Archive
   // is a type of input archive the & operator is defined similar to >>.
@@ -93,7 +97,8 @@ private:
   void serialize(Archive& ar, const unsigned int version)
   {
     ar & m_extremities;
-    ar & m_longitudes;
+    //ar & m_longitudes;
+    ar & m_plottedLongitudes;
     Q_UNUSED(version);
   }
 };

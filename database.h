@@ -39,6 +39,7 @@ public:
   QSqlDatabase m_db;
 
 private:
+  std::vector<std::string> m_requiredArgs = { "-host", "-database", "-username", "-password" };
 };
 
 #endif

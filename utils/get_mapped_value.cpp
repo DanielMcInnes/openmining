@@ -1,0 +1,7 @@
+
+#include <QString>
+
+namespace utils
+{
+
+}
