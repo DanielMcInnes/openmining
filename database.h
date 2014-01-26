@@ -25,6 +25,7 @@
 #include <iostream>
 
 // Qt #includes
+/// \ThirdPartyDep #1 <QtSql/qsqldatabase.h>
 #include <QtSql/qsqldatabase.h>
 #include <QStringList>
 

@@ -13,6 +13,7 @@ SOURCES = \
     location.cpp \
     main.cpp \
     modelview.cpp \
+    requirements.cpp \
     simpleplot.cpp \
     utils/copy_mapped_value.cpp \
     utils/find_or_exit.cpp \

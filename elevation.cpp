@@ -138,6 +138,7 @@ double Longitudes::getElevation(double& longitude, double& latitude, const uint3
   try
   {
     elevation = m_plottedLongitudes.at(longitude).m_latitudes.at(latitude);
+/// \req #40 - Except this one.
     
     if (Latitudes_dbg) cout << FN << ": found value at :" << longitude << ", " << latitude << endl;    
   }
@@ -169,3 +170,4 @@ double Longitudes::getElevation(double& longitude, double& latitude, const uint3
 Latitudes::Latitudes()
 {
 }
+
