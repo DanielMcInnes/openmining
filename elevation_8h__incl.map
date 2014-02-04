@@ -1,5 +1,10 @@
-<map id="G" name="G">
-<area shape="rect" id="node13" href="$mytypes_8h.html" title="mytypes.h" alt="" coords="611,160,693,189"/>
-<area shape="rect" id="node17" href="$cube_8h.html" title="cube.h" alt="" coords="321,83,383,112"/>
-<area shape="rect" id="node27" href="$simpleplot_8h.html" title="simpleplot.h" alt="" coords="893,83,984,112"/>
+<map id="elevation.h" name="elevation.h">
+<area shape="rect" id="node13" href="$mytypes_8h.html" title="mytypes.h" alt="" coords="541,497,624,527"/>
+<area shape="rect" id="node19" href="$Cube_8h.html" title="Cube.h" alt="" coords="704,411,768,440"/>
+<area shape="rect" id="node29" href="$simpleplot_8h.html" title="simpleplot.h" alt="" coords="684,83,775,112"/>
+<area shape="rect" id="node39" href="$Rectangle_8h.html" title="utils/Rectangle.h" alt="" coords="1491,324,1611,353"/>
+<area shape="rect" id="node41" href="$Points3DGrid_8h.html" title="Points3DGrid.h" alt="" coords="899,160,1008,189"/>
+<area shape="rect" id="node51" href="$Points3D_8h.html" title="Points3D.h" alt="" coords="493,324,579,353"/>
+<area shape="rect" id="node54" href="$Points3DSqlQuery_8h.html" title="Points3DSqlQuery.h" alt="" coords="868,237,1009,267"/>
+<area shape="rect" id="node69" href="$Point3D_8h.html" title="Point3D.h" alt="" coords="653,324,733,353"/>
 </map>

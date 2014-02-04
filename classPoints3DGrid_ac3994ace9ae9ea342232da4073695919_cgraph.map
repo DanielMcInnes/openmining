@@ -1,0 +1,9 @@
+<map id="Points3DGrid::getZ" name="Points3DGrid::getZ">
+<area shape="rect" id="node3" href="$classutils_1_1Rectangle.html#af70ac95085d877ca5a7e6f14e9bfb9f6" title="utils::Rectangle::xCentre" alt="" coords="191,5,356,35"/>
+<area shape="rect" id="node5" href="$classutils_1_1Rectangle.html#a1a9c8a3fe672981b9b22c2e4f06662b8" title="utils::Rectangle::yCentre" alt="" coords="191,59,356,88"/>
+<area shape="rect" id="node7" href="$classPoints3DSqlQuery.html#a873b2fe1c7519c1113de73636ec3a0fd" title="Points3DSqlQuery::getZ" alt="" coords="192,112,355,141"/>
+<area shape="rect" id="node9" href="$classutils_1_1Rectangle.html#aef3414fcb41ffb2d53523339412f10d6" title="utils::Rectangle::xMin" alt="" coords="408,32,557,61"/>
+<area shape="rect" id="node11" href="$classutils_1_1Rectangle.html#a419de974b3960cbcbd1abea01975a047" title="utils::Rectangle::xMax" alt="" coords="407,85,559,115"/>
+<area shape="rect" id="node13" href="$classutils_1_1Rectangle.html#a4926f656093a044590872746e50550e4" title="utils::Rectangle::yMin" alt="" coords="408,139,557,168"/>
+<area shape="rect" id="node15" href="$classutils_1_1Rectangle.html#ac692a540ba278b5a9c5221adf37e62f0" title="utils::Rectangle::yMax" alt="" coords="407,192,559,221"/>
+</map>

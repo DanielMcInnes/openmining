@@ -1,4 +1,4 @@
-<map id="G" name="G">
+<map id="operator&lt;&lt;" name="operator&lt;&lt;">
 <area shape="rect" id="node3" href="$classCube.html#a8cd029116cba93a85af8ac218de42dc6" title="Cube::ranges" alt="" coords="140,59,239,88"/>
 <area shape="rect" id="node5" href="$classCube.html#a808267eb757ed6d52a465e353a72a86d" title="Cube::longitudeRange" alt="" coords="289,5,439,35"/>
 <area shape="rect" id="node7" href="$classCube.html#a9dec2062ff5ef34cfb94a7b5680bb5f2" title="Cube::latitudeRange" alt="" coords="293,59,435,88"/>

@@ -1,18 +1,13 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$main_8cpp.html#afe8b3c553fc274d0c04784275b96be43" title="runchecks" alt="" coords="345,5,428,35"/>
-<area shape="rect" id="node7" href="$namespaceutils.html#a6cf45fb929ad6c5ae09cad2a6edd710b" title="utils::timestamp" alt="" coords="136,319,251,348"/>
-<area shape="rect" id="node9" href="$classLongitudes.html#a2212165bf0a0b92b42b7fcb22be24caa" title="Longitudes::load" alt="" coords="135,212,252,241"/>
-<area shape="rect" id="node39" href="$classLongitudes.html#abf59bfb30080126403a622560290d49a" title="Longitudes::saveIfUpdated" alt="" coords="104,265,283,295"/>
-<area shape="rect" id="node5" href="$namespaceutils.html#af0c8ceb6e41cc65ccd0dac2bb2d930dc" title="utils::Exit" alt="" coords="916,81,993,111"/>
-<area shape="rect" id="node11" href="$namespaceutils.html#a9d08a948d3bbc87cb88287324740d78c" title="utils::load" alt="" coords="517,31,595,60"/>
-<area shape="rect" id="node13" href="$classLocations.html#a2edb339d12c2807f25d8234f5a35a99e" title="Locations::load" alt="" coords="332,187,441,216"/>
-<area shape="rect" id="node34" href="$namespaceutils.html#aff921d82a4ca404a502da530ec854aac" title="utils::contains_key" alt="" coords="491,396,621,425"/>
-<area shape="rect" id="node36" href="$namespaceutils.html#a2513f7c8d7cf773c557cef77a3b0d06a" title="utils::save" alt="" coords="345,291,428,320"/>
-<area shape="rect" id="node16" href="$classCube.html#a38d70f33051f213dcad96ca34a1c103a" title="Cube::Load" alt="" coords="512,135,600,164"/>
-<area shape="rect" id="node18" href="$namespaceutils.html#a513d0f021a7cabd5ee52676487aee2a4" title="utils::copy_mapped_value" alt="" coords="669,187,843,216"/>
-<area shape="rect" id="node24" href="$namespaceutils.html#a761793ef702b28f0e988054cb192630e" title="utils::usage" alt="" coords="911,239,999,268"/>
-<area shape="rect" id="node30" href="$classLocations.html#ac163fae69858ae66ed45a2abdc711db7" title="Locations::build" alt="" coords="500,289,612,319"/>
-<area shape="rect" id="node32" href="$classLocations.html#a0ce39ba7d7f320bdb2f04087adbfb931" title="Locations::save" alt="" coords="499,343,613,372"/>
-<area shape="rect" id="node22" href="$namespaceutils.html#a7da744c53fc28b40b381ae8d2b57600c" title="utils::find_or_exit" alt="" coords="696,133,816,163"/>
-<area shape="rect" id="node20" href="$namespaceutils.html#a741bf006e9ad882e7d6fdaaca495b36f" title="utils::valueForKey" alt="" coords="892,185,1017,215"/>
+<map id="main" name="main">
+<area shape="rect" id="node3" href="$main_8cpp.html#afe8b3c553fc274d0c04784275b96be43" title="runchecks" alt="" coords="375,5,457,35"/>
+<area shape="rect" id="node7" href="$namespaceutils.html#a6cf45fb929ad6c5ae09cad2a6edd710b" title="utils::timestamp" alt="" coords="144,64,259,93"/>
+<area shape="rect" id="node9" href="$classCube.html#a3094d918d6b6bcd79516bfe0e378aa4e" title="Cube::init" alt="" coords="163,117,240,147"/>
+<area shape="rect" id="node20" href="$classPoints3DGrid.html#a3732c62d904523c6c284de1b72e38d3c" title="Points3DGrid::saveIfUpdated" alt="" coords="105,175,297,204"/>
+<area shape="rect" id="node5" href="$namespaceutils.html#af0c8ceb6e41cc65ccd0dac2bb2d930dc" title="utils::Exit" alt="" coords="559,5,636,35"/>
+<area shape="rect" id="node11" href="$namespaceutils.html#a513d0f021a7cabd5ee52676487aee2a4" title="utils::copy_mapped\l_value" alt="" coords="349,111,483,158"/>
+<area shape="rect" id="node15" href="$namespaceutils.html#a7da744c53fc28b40b381ae8d2b57600c" title="utils::find_or_exit" alt="" coords="356,59,476,88"/>
+<area shape="rect" id="node13" href="$namespaceutils.html#a34b8754113a60f164fd0f8a4e9c02803" title="utils::valueForKey" alt="" coords="535,120,660,149"/>
+<area shape="rect" id="node17" href="$namespaceutils.html#a761793ef702b28f0e988054cb192630e" title="utils::usage" alt="" coords="553,59,641,88"/>
+<area shape="rect" id="node22" href="$namespaceutils.html#a807a01414ab1e14e13079b8e31c4c10d" title="utils::saveIfUpdated" alt="" coords="347,181,485,211"/>
+<area shape="rect" id="node24" href="$namespaceutils.html#a2513f7c8d7cf773c557cef77a3b0d06a" title="utils::save" alt="" coords="556,181,639,211"/>
 </map>

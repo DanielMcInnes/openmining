@@ -1,12 +1,14 @@
-<map id="G" name="G">
+<map id="utils/Exit.h" name="utils/Exit.h">
 <area shape="rect" id="node3" href="$find__or__exit_8h.html" title="utils/find_or_exit.h" alt="" coords="5,83,133,112"/>
-<area shape="rect" id="node7" href="$database_8cpp.html" title="database.cpp" alt="" coords="187,160,285,189"/>
-<area shape="rect" id="node9" href="$get__mapped__value_8h.html" title="utils/get_mapped_value.h" alt="" coords="208,83,379,112"/>
-<area shape="rect" id="node12" href="$location_8cpp.html" title="location.cpp" alt="" coords="403,83,493,112"/>
-<area shape="rect" id="node14" href="$main_8cpp.html" title="main.cpp" alt="" coords="517,83,592,112"/>
-<area shape="rect" id="node16" href="$simpleplot_8cpp.html" title="simpleplot.cpp" alt="" coords="616,83,723,112"/>
-<area shape="rect" id="node18" href="$check__argv_8h.html" title="utils/check_argv.h" alt="" coords="747,83,875,112"/>
-<area shape="rect" id="node20" href="$find__or__exit_8cpp.html" title="utils/find_or_exit.cpp" alt="" coords="899,83,1040,112"/>
-<area shape="rect" id="node22" href="$utils_8cpp.html" title="utils/utils.cpp" alt="" coords="1064,83,1163,112"/>
-<area shape="rect" id="node5" href="$cube_8cpp.html" title="cube.cpp" alt="" coords="32,160,107,189"/>
+<area shape="rect" id="node7" href="$Database_8cpp.html" title="Database.cpp" alt="" coords="127,160,228,189"/>
+<area shape="rect" id="node9" href="$get__mapped__value_8h.html" title="utils/get_mapped_value.h" alt="" coords="215,83,385,112"/>
+<area shape="rect" id="node16" href="$location_8cpp.html" title="location.cpp" alt="" coords="409,83,500,112"/>
+<area shape="rect" id="node18" href="$main_8cpp.html" title="main.cpp" alt="" coords="524,83,599,112"/>
+<area shape="rect" id="node20" href="$simpleplot_8cpp.html" title="simpleplot.cpp" alt="" coords="623,83,729,112"/>
+<area shape="rect" id="node22" href="$check__argv_8h.html" title="utils/check_argv.h" alt="" coords="753,83,881,112"/>
+<area shape="rect" id="node24" href="$find__or__exit_8cpp.html" title="utils/find_or_exit.cpp" alt="" coords="905,83,1047,112"/>
+<area shape="rect" id="node26" href="$utils_8cpp.html" title="utils/utils.cpp" alt="" coords="1071,83,1169,112"/>
+<area shape="rect" id="node5" href="$Cube_8cpp.html" title="Cube.cpp" alt="" coords="25,160,103,189"/>
+<area shape="rect" id="node12" href="$Points3DSqlQuery_8cpp.html" title="Points3DSqlQuery.cpp" alt="" coords="252,160,407,189"/>
+<area shape="rect" id="node14" href="$get__mapped__value_8cpp.html" title="utils/get_mapped_value.cpp" alt="" coords="431,160,615,189"/>
 </map>

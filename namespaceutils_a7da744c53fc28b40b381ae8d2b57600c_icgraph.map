@@ -1,6 +1,7 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classCube.html#a38d70f33051f213dcad96ca34a1c103a" title="Cube::Load" alt="" coords="177,5,265,35"/>
-<area shape="rect" id="node5" href="$classLocations.html#a2edb339d12c2807f25d8234f5a35a99e" title="Locations::load" alt="" coords="316,5,425,35"/>
-<area shape="rect" id="node7" href="$classLongitudes.html#a2212165bf0a0b92b42b7fcb22be24caa" title="Longitudes::load" alt="" coords="475,5,592,35"/>
-<area shape="rect" id="node9" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="640,5,691,35"/>
+<map id="utils::find_or_exit" name="utils::find_or_exit">
+<area shape="rect" id="node3" href="$classCube.html#a3094d918d6b6bcd79516bfe0e378aa4e" title="Cube::init" alt="" coords="177,59,255,88"/>
+<area shape="rect" id="node5" href="$classLocations.html#a2edb339d12c2807f25d8234f5a35a99e" title="Locations::load" alt="" coords="341,5,451,35"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="371,59,421,88"/>
+<area shape="rect" id="node11" href="$classPoints3DSqlQuery.html#afc3b40d7349cf37d8b3d72b0453d4c74" title="Points3DSqlQuery::Points3\lDSqlQuery" alt="" coords="305,111,487,158"/>
+<area shape="rect" id="node7" href="$classLongitudes.html#a2212165bf0a0b92b42b7fcb22be24caa" title="Longitudes::load" alt="" coords="536,5,653,35"/>
 </map>

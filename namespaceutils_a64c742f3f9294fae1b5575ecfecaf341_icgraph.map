@@ -1,3 +1,7 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classLocations.html#a91a6d37800326334685efa88d823f110" title="Locations::build" alt="" coords="172,5,284,35"/>
+<map id="utils::same_size" name="utils::same_size">
+<area shape="rect" id="node3" href="$classLocations.html#a91a6d37800326334685efa88d823f110" title="Locations::build" alt="" coords="197,32,309,61"/>
+<area shape="rect" id="node11" href="$classPoints3DSqlQuery.html#a9dcb90ac06c25527074d08b045a19dbf" title="Points3DSqlQuery::build" alt="" coords="171,85,336,115"/>
+<area shape="rect" id="node5" href="$classLocations.html#a2edb339d12c2807f25d8234f5a35a99e" title="Locations::load" alt="" coords="387,5,496,35"/>
+<area shape="rect" id="node9" href="$classLocations.html#af6d1869def696ccdf473348e26970aac" title="Locations::build" alt="" coords="385,59,497,88"/>
+<area shape="rect" id="node7" href="$classLongitudes.html#a2212165bf0a0b92b42b7fcb22be24caa" title="Longitudes::load" alt="" coords="547,5,664,35"/>
 </map>

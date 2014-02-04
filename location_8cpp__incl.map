@@ -1,13 +1,13 @@
-<map id="G" name="G">
-<area shape="rect" id="node13" href="$location_8h.html" title="location.h" alt="" coords="961,83,1038,112"/>
-<area shape="rect" id="node47" href="$utils_8h.html" title="utils/utils.h" alt="" coords="1352,83,1437,112"/>
-<area shape="rect" id="node58" href="$load_8h.html" title="utils/load.h" alt="" coords="1461,83,1546,112"/>
-<area shape="rect" id="node63" href="$save_8h.html" title="utils/save.h" alt="" coords="1621,83,1709,112"/>
-<area shape="rect" id="node66" href="$same__size_8h.html" title="utils/same_size.h" alt="" coords="1733,83,1856,112"/>
-<area shape="rect" id="node68" href="$percent_8h.html" title="utils/percent.h" alt="" coords="1880,83,1984,112"/>
-<area shape="rect" id="node70" href="$update__progress_8h.html" title="utils/update_progress.h" alt="" coords="2008,83,2165,112"/>
-<area shape="rect" id="node73" href="$Exit_8h.html" title="utils/Exit.h" alt="" coords="2189,83,2272,112"/>
-<area shape="rect" id="node76" href="$copy__mapped__value_8h.html" title="utils/copy_mapped_value.h" alt="" coords="30,160,209,189"/>
-<area shape="rect" id="node34" href="$mytypes_8h.html" title="mytypes.h" alt="" coords="505,237,588,267"/>
-<area shape="rect" id="node38" href="$cube_8h.html" title="cube.h" alt="" coords="934,160,996,189"/>
+<map id="location.cpp" name="location.cpp">
+<area shape="rect" id="node13" href="$location_8h.html" title="location.h" alt="" coords="660,83,737,112"/>
+<area shape="rect" id="node49" href="$utils_8h.html" title="utils/utils.h" alt="" coords="1265,169,1351,199"/>
+<area shape="rect" id="node60" href="$load_8h.html" title="utils/load.h" alt="" coords="1408,83,1493,112"/>
+<area shape="rect" id="node66" href="$save_8h.html" title="utils/save.h" alt="" coords="1245,83,1333,112"/>
+<area shape="rect" id="node72" href="$same__size_8h.html" title="utils/same_size.h" alt="" coords="1517,83,1640,112"/>
+<area shape="rect" id="node74" href="$percent_8h.html" title="utils/percent.h" alt="" coords="1664,83,1768,112"/>
+<area shape="rect" id="node76" href="$update__progress_8h.html" title="utils/update_progress.h" alt="" coords="1792,83,1949,112"/>
+<area shape="rect" id="node79" href="$Exit_8h.html" title="utils/Exit.h" alt="" coords="1973,83,2056,112"/>
+<area shape="rect" id="node82" href="$copy__mapped__value_8h.html" title="utils/copy_mapped_value.h" alt="" coords="1012,169,1191,199"/>
+<area shape="rect" id="node34" href="$mytypes_8h.html" title="mytypes.h" alt="" coords="693,265,776,295"/>
+<area shape="rect" id="node40" href="$Cube_8h.html" title="Cube.h" alt="" coords="873,169,937,199"/>
 </map>

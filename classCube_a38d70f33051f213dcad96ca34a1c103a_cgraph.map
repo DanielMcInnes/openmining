@@ -1,7 +1,7 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$namespaceutils.html#a513d0f021a7cabd5ee52676487aee2a4" title="utils::copy_mapped_value" alt="" coords="144,5,317,35"/>
-<area shape="rect" id="node7" href="$namespaceutils.html#a7da744c53fc28b40b381ae8d2b57600c" title="utils::find_or_exit" alt="" coords="171,59,291,88"/>
-<area shape="rect" id="node5" href="$namespaceutils.html#a741bf006e9ad882e7d6fdaaca495b36f" title="utils::valueForKey" alt="" coords="367,5,492,35"/>
-<area shape="rect" id="node9" href="$namespaceutils.html#a761793ef702b28f0e988054cb192630e" title="utils::usage" alt="" coords="385,59,473,88"/>
-<area shape="rect" id="node11" href="$namespaceutils.html#af0c8ceb6e41cc65ccd0dac2bb2d930dc" title="utils::Exit" alt="" coords="391,112,468,141"/>
+<map id="Cube::Load" name="Cube::Load">
+<area shape="rect" id="node3" href="$namespaceutils.html#a513d0f021a7cabd5ee52676487aee2a4" title="utils::copy_mapped\l_value" alt="" coords="145,5,279,51"/>
+<area shape="rect" id="node7" href="$namespaceutils.html#a7da744c53fc28b40b381ae8d2b57600c" title="utils::find_or_exit" alt="" coords="152,75,272,104"/>
+<area shape="rect" id="node5" href="$namespaceutils.html#a34b8754113a60f164fd0f8a4e9c02803" title="utils::valueForKey" alt="" coords="329,13,455,43"/>
+<area shape="rect" id="node9" href="$namespaceutils.html#a761793ef702b28f0e988054cb192630e" title="utils::usage" alt="" coords="348,71,436,100"/>
+<area shape="rect" id="node11" href="$namespaceutils.html#af0c8ceb6e41cc65ccd0dac2bb2d930dc" title="utils::Exit" alt="" coords="353,124,431,153"/>
 </map>

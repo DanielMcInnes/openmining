@@ -1,8 +1,11 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classLocations.html#a2edb339d12c2807f25d8234f5a35a99e" title="Locations::load" alt="" coords="561,5,671,35"/>
-<area shape="rect" id="node9" href="$namespaceutils.html#a7da744c53fc28b40b381ae8d2b57600c" title="utils::find_or_exit" alt="" coords="199,31,319,60"/>
-<area shape="rect" id="node14" href="$namespaceutils.html#a0637c77c6e8873c88763555af6397bbd" title="utils::exit_if_no_cachefile_specified" alt="" coords="145,84,372,113"/>
-<area shape="rect" id="node5" href="$classLongitudes.html#a2212165bf0a0b92b42b7fcb22be24caa" title="Longitudes::load" alt="" coords="720,5,837,35"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="885,5,936,35"/>
-<area shape="rect" id="node11" href="$classCube.html#a38d70f33051f213dcad96ca34a1c103a" title="Cube::Load" alt="" coords="423,31,511,60"/>
+<map id="utils::usage" name="utils::usage">
+<area shape="rect" id="node3" href="$classLocations.html#a2edb339d12c2807f25d8234f5a35a99e" title="Locations::load" alt="" coords="635,11,744,40"/>
+<area shape="rect" id="node7" href="$classPoints3DSqlQuery.html#adcd0c23f8eb2ada65aa1affdf9e2fcb1" title="Points3DSqlQuery::init" alt="" coords="152,50,307,79"/>
+<area shape="rect" id="node11" href="$namespaceutils.html#a7da744c53fc28b40b381ae8d2b57600c" title="utils::find_or_exit" alt="" coords="169,103,289,132"/>
+<area shape="rect" id="node20" href="$namespaceutils.html#a0637c77c6e8873c88763555af6397bbd" title="utils::exit_if_no_cachefile\l_specified" alt="" coords="145,156,313,202"/>
+<area shape="rect" id="node5" href="$classLongitudes.html#a2212165bf0a0b92b42b7fcb22be24caa" title="Longitudes::load" alt="" coords="829,11,947,40"/>
+<area shape="rect" id="node9" href="$classPoints3DGrid.html#a98f24c85c4c49c80a3078341b05e246d" title="Points3DGrid::Points3DGrid" alt="" coords="363,50,549,79"/>
+<area shape="rect" id="node13" href="$classCube.html#a3094d918d6b6bcd79516bfe0e378aa4e" title="Cube::init" alt="" coords="417,103,495,132"/>
+<area shape="rect" id="node16" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="664,90,715,119"/>
+<area shape="rect" id="node18" href="$classPoints3DSqlQuery.html#afc3b40d7349cf37d8b3d72b0453d4c74" title="Points3DSqlQuery::Points3\lDSqlQuery" alt="" coords="599,142,780,189"/>
 </map>

@@ -1,4 +1,4 @@
-<map id="G" name="G">
+<map id="utils::find_or_exit" name="utils::find_or_exit">
 <area shape="rect" id="node3" href="$namespaceutils.html#a761793ef702b28f0e988054cb192630e" title="utils::usage" alt="" coords="177,5,265,35"/>
 <area shape="rect" id="node5" href="$namespaceutils.html#af0c8ceb6e41cc65ccd0dac2bb2d930dc" title="utils::Exit" alt="" coords="183,59,260,88"/>
 </map>

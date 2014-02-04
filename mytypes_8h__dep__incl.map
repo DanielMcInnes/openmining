@@ -1,11 +1,19 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$cube_8h.html" title="cube.h" alt="" coords="186,83,248,112"/>
-<area shape="rect" id="node7" href="$elevation_8h.html" title="elevation.h" alt="" coords="24,160,109,189"/>
-<area shape="rect" id="node9" href="$elevation_8cpp.html" title="elevation.cpp" alt="" coords="136,237,234,267"/>
-<area shape="rect" id="node19" href="$location_8h.html" title="location.h" alt="" coords="282,160,360,189"/>
-<area shape="rect" id="node5" href="$cube_8cpp.html" title="cube.cpp" alt="" coords="184,160,258,189"/>
-<area shape="rect" id="node11" href="$simpleplot_8h.html" title="simpleplot.h" alt="" coords="21,237,112,267"/>
-<area shape="rect" id="node14" href="$main_8cpp.html" title="main.cpp" alt="" coords="29,315,104,344"/>
-<area shape="rect" id="node16" href="$simpleplot_8cpp.html" title="simpleplot.cpp" alt="" coords="198,315,305,344"/>
-<area shape="rect" id="node22" href="$location_8cpp.html" title="location.cpp" alt="" coords="360,237,450,267"/>
+<map id="mytypes.h" name="mytypes.h">
+<area shape="rect" id="node3" href="$Cube_8h.html" title="Cube.h" alt="" coords="322,83,386,112"/>
+<area shape="rect" id="node7" href="$elevation_8h.html" title="elevation.h" alt="" coords="390,469,475,499"/>
+<area shape="rect" id="node9" href="$elevation_8cpp.html" title="elevation.cpp" alt="" coords="122,547,221,576"/>
+<area shape="rect" id="node13" href="$Point3D_8h.html" title="Point3D.h" alt="" coords="427,160,507,189"/>
+<area shape="rect" id="node15" href="$Points3DSqlQuery_8h.html" title="Points3DSqlQuery.h" alt="" coords="439,237,581,267"/>
+<area shape="rect" id="node17" href="$Points3DGrid_8h.html" title="Points3DGrid.h" alt="" coords="689,315,798,344"/>
+<area shape="rect" id="node34" href="$location_8h.html" title="location.h" alt="" coords="73,392,150,421"/>
+<area shape="rect" id="node43" href="$Points3D_8h.html" title="Points3D.h" alt="" coords="609,160,694,189"/>
+<area shape="rect" id="node5" href="$Cube_8cpp.html" title="Cube.cpp" alt="" coords="225,160,302,189"/>
+<area shape="rect" id="node11" href="$main_8cpp.html" title="main.cpp" alt="" coords="435,547,510,576"/>
+<area shape="rect" id="node31" href="$Point3D_8cpp.html" title="Point3D.cpp" alt="" coords="322,237,415,267"/>
+<area shape="rect" id="node25" href="$Points3DGrid_8cpp.html" title="Points3DGrid.cpp" alt="" coords="550,392,675,421"/>
+<area shape="rect" id="node29" href="$Points3DSqlQuery_8cpp.html" title="Points3DSqlQuery.cpp" alt="" coords="322,315,477,344"/>
+<area shape="rect" id="node19" href="$simpleplot_8h.html" title="simpleplot.h" alt="" coords="699,392,790,421"/>
+<area shape="rect" id="node23" href="$simpleplot_8cpp.html" title="simpleplot.cpp" alt="" coords="259,469,366,499"/>
+<area shape="rect" id="node37" href="$location_8cpp.html" title="location.cpp" alt="" coords="43,469,134,499"/>
+<area shape="rect" id="node47" href="$Points3D_8cpp.html" title="Points3D.cpp" alt="" coords="605,237,706,267"/>
 </map>

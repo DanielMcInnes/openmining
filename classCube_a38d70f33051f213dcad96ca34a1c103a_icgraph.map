@@ -1,4 +1,4 @@
-<map id="G" name="G">
+<map id="Cube::Load" name="Cube::Load">
 <area shape="rect" id="node3" href="$classLocations.html#a2edb339d12c2807f25d8234f5a35a99e" title="Locations::load" alt="" coords="145,5,255,35"/>
 <area shape="rect" id="node5" href="$classLongitudes.html#a2212165bf0a0b92b42b7fcb22be24caa" title="Longitudes::load" alt="" coords="304,5,421,35"/>
 <area shape="rect" id="node7" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="469,5,520,35"/>

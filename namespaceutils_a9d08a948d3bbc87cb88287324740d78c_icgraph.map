@@ -1,4 +1,4 @@
-<map id="G" name="G">
+<map id="utils::load" name="utils::load">
 <area shape="rect" id="node3" href="$classLongitudes.html#a2212165bf0a0b92b42b7fcb22be24caa" title="Longitudes::load" alt="" coords="293,5,411,35"/>
 <area shape="rect" id="node7" href="$classLocations.html#a2edb339d12c2807f25d8234f5a35a99e" title="Locations::load" alt="" coords="135,31,244,60"/>
 <area shape="rect" id="node10" href="$namespaceutils.html#ab56d1fa50bab6decccfa9e13cd548e85" title="utils::load" alt="" coords="151,84,228,113"/>
