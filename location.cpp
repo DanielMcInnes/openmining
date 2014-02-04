@@ -58,20 +58,20 @@ bool Location::inside(const Cube& cube)
   bool retval = false;
   if (Locations_dbg)
   {
-    if  (m_latitude  < cube.m_minlat)	{	cout << FN << "m_latitude: " << m_latitude << " < minlat: " << cube.m_minlat << endl;	}
-    if  (m_latitude  > cube.m_maxlat)	{ 	cout << FN << "m_latitude: " <<  m_latitude << " > maxlat: " << cube.m_maxlat << endl;	}
-    if  (m_longitude < cube.m_minlong) 	{	cout << FN << "m_longitude: " << m_longitude << " < minlong: " << cube.m_minlong << endl;}
-    if  (m_longitude > cube.m_maxlong) 	{	cout << FN << "m_longitude: " << m_longitude << " > maxlong: " << cube.m_maxlong << endl;}
-    if  (m_elevation < cube.m_minel) 	{	cout << FN << "m_elevation: " << m_elevation << " < minel: " << cube.m_minel << endl;	}
-    if  (m_elevation > cube.m_maxel)	{	cout << FN << "m_elevation: " << m_elevation << " > maxel: " << cube.m_maxel << endl;	}
+    if  (m_latitude  < cube.m_miny)	{	cout << FN << "m_latitude: " << m_latitude << " < minlat: " << cube.m_miny << endl;	}
+    if  (m_latitude  > cube.m_maxy)	{ 	cout << FN << "m_latitude: " <<  m_latitude << " > maxlat: " << cube.m_maxy << endl;	}
+    if  (m_longitude < cube.m_minx) 	{	cout << FN << "m_longitude: " << m_longitude << " < minlong: " << cube.m_minx << endl;}
+    if  (m_longitude > cube.m_maxx) 	{	cout << FN << "m_longitude: " << m_longitude << " > maxlong: " << cube.m_maxx << endl;}
+    if  (m_elevation < cube.m_minz) 	{	cout << FN << "m_elevation: " << m_elevation << " < minel: " << cube.m_minz << endl;	}
+    if  (m_elevation > cube.m_maxz)	{	cout << FN << "m_elevation: " << m_elevation << " > maxel: " << cube.m_maxz << endl;	}
   }
   if (
-    (m_latitude  > cube.m_minlat) &&
-    (m_latitude  < cube.m_maxlat) &&
-    (m_longitude > cube.m_minlong) &&
-    (m_longitude < cube.m_maxlong) &&
-    (m_elevation > cube.m_minel) &&
-    (m_elevation < cube.m_maxel)
+    (m_latitude  > cube.m_miny) &&
+    (m_latitude  < cube.m_maxy) &&
+    (m_longitude > cube.m_minx) &&
+    (m_longitude < cube.m_maxx) &&
+    (m_elevation > cube.m_minz) &&
+    (m_elevation < cube.m_maxz)
   )
   {
     retval = true;
@@ -116,7 +116,7 @@ bool Locations::load(const QStringList& args)
   {
     cout << FN << "building object from db query: " << endl;
 
-    m_validXYZ.Load(args);
+    m_validXYZ.init(args);
     cout << FN << m_validXYZ << endl;
 
     QString str, strCountQuery = "SELECT COUNT(*) from shift_gps;";

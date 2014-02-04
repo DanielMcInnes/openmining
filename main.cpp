@@ -37,15 +37,10 @@ graphviz
 #include "simpleplot.h"
 #include "elevation.h"
 #include "utils/Exit.h"
+#include "Points3DSqlQuery.h"
 
 using namespace std;
 using namespace utils;
-
-/// \req #42 - The system shall work in any situation.
-///
-/// line2
-/// line3
-
 
 void runchecks();
 // sample data
@@ -66,35 +61,13 @@ int main(int argc, char *argv[])
   QApplication app(argc, argv);
   QStringList args = QCoreApplication::arguments();
   Database db(args);
-
-  Longitudes longitudes(args);
-  longitudes.load();
-  cout << FN << "built longitudes:" << timestamp() << endl;
-
-  Plot plot(args, longitudes.m_extremities, longitudes);
+  Points3DGrid grid(args);
+  Cube boundary;
+  boundary.init(args);
+  Plot plot(args, boundary, grid);
+  plot.resize(800,600);
   plot.show();
-  longitudes.saveIfUpdated();
-  return app.exec();
-
-/*  longitude_t lo = 543669354;
-  latitude_t la = -116767356;
-  cout << FN << "Longitudes test: lo: " << lo << " la: " << la << " elev: " << longitudes[lo][la] << endl;
-  longitudes.print();
-      Plot plot(args);
-      plot.resize(800,600);
-      plot.show();
-      return app.exec();
-*/
-  std::string time2 = "Locations built. " + timestamp();
-  std::string time3 = "Finished. " + timestamp();
-
-  std::cout << FN << time1 << std::endl;
-  std::cout << FN << time2 << std::endl;
-  std::cout << FN << time3 << std::endl;
-
-  ModelView view;
-  view.resize(800,600);
-  view.show();
+  grid.saveIfUpdated();
   return app.exec();
 }
 

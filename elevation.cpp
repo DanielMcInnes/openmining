@@ -45,7 +45,8 @@ using namespace utils;
 uint32_t Longitudes_dbg = false;
 uint32_t Latitudes_dbg = false;
 
-Latitudes emptyLatitudes;
+latitudes_t  emptyLatitudes;
+//Latitudes  emptyLatitudes;
 longitudes_t dummy_longitudes = {{0, emptyLatitudes}};
 latitudes_t dummy_latitudes = {{0,0}};
 elevation_t dummy_elevation = 0;
@@ -100,7 +101,8 @@ void Longitudes::print()
 
   for (auto iter_1 : m_longitudes)
   {
-    for (auto iter_2 : iter_1.second.m_latitudes)
+    //for (auto iter_2 : iter_1.second.m_latitudes)
+    for (auto iter_2 : iter_1.second)
     {
       cout << "long: " << iter_1.first << " lat: " << iter_2.first << " elev: " << iter_2.second  << endl;
     }
@@ -120,7 +122,7 @@ Longitudes& Longitudes::operator=(const Locations& locations)
   return(*this);
 }
 
-Latitudes& Longitudes::operator[](const longitude_t& longitude)
+latitudes_t& Longitudes::operator[](const longitude_t& longitude)
 {
   if (Longitudes_dbg) cout << FN << "calling Longitudes::operator[" << longitude << "]" << endl;
   return m_longitudes[longitude];
@@ -137,7 +139,7 @@ double Longitudes::getElevation(double& longitude, double& latitude, const uint3
   double elevation = INT32_MIN;
   try
   {
-    elevation = m_plottedLongitudes.at(longitude).m_latitudes.at(latitude);
+    elevation = m_plottedLongitudes.at(longitude).at(latitude);
 /// \req #40 - Except this one.
     
     if (Latitudes_dbg) cout << FN << ": found value at :" << longitude << ", " << latitude << endl;    
@@ -149,7 +151,7 @@ double Longitudes::getElevation(double& longitude, double& latitude, const uint3
 
     for (auto iter_1 = lower_longitude; iter_1 != upper_longitude; ++iter_1)
     {
-      auto latitudes = iter_1->second.m_latitudes;
+      auto latitudes = iter_1->second;
       auto lower_latitude = latitudes.lower_bound(latitude - coarseness);
       auto upper_latitude = latitudes.upper_bound(latitude + coarseness);
       for (auto iter_2 = lower_latitude; iter_2 != upper_latitude; ++iter_2)

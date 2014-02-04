@@ -40,20 +40,20 @@ class Cube
 public:
   //const member functions
   void Print() const;
-  longitude_t longitudeRange() const { return m_maxlong - m_minlong; }
-  latitude_t latitudeRange()   const { return m_maxlat - m_minlat; } 
-  elevation_t elevationRange() const { return m_maxel - m_minel; }
+  longitude_t longitudeRange() const { return m_maxx - m_minx; }
+  latitude_t latitudeRange()   const { return m_maxy - m_miny; } 
+  elevation_t elevationRange() const { return m_maxz - m_minz; }
   std::string ranges() const;
 
   // non-const member functions
   Cube();
-  bool Load(const QStringList& args);
+  bool init(const QStringList& args);
   void UpdateMinMax(const longitude_t& longitude, const latitude_t& latitude, const elevation_t& elevation);
 
   // member variables
-  latitude_t m_minlat, m_maxlat;
-  longitude_t m_minlong, m_maxlong;
-  elevation_t m_minel, m_maxel;
+  latitude_t m_miny, m_maxy;
+  longitude_t m_minx, m_maxx;
+  elevation_t m_minz, m_maxz;
   int32_t m_sidelength;
 
   // friends
@@ -67,12 +67,12 @@ private:
   template<class Archive>
   void serialize(Archive& ar, const unsigned int version)
   {
-    ar & m_minlat;
-    ar & m_maxlat;
-    ar & m_minlong;
-    ar & m_maxlong;
-    ar & m_minel;
-    ar & m_maxel;
+    ar & m_miny;
+    ar & m_maxy;
+    ar & m_minx;
+    ar & m_maxx;
+    ar & m_minz;
+    ar & m_maxz;
     Q_UNUSED(version);
   }
 };

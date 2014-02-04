@@ -25,7 +25,6 @@
 #include <iostream>
 
 // Qt #includes
-/// \ThirdPartyDep #1 <QtSql/qsqldatabase.h>
 #include <QtSql/qsqldatabase.h>
 #include <QStringList>
 
@@ -40,6 +39,20 @@ public:
   QSqlDatabase m_db;
 
 private:
+/*
+configure: error: Building GCC requires GMP 4.2+, MPFR 2.4.0+ and MPC 0.8.0+.
+Try the --with-gmp, --with-mpfr and/or --with-mpc options to specify
+their locations.  Source code for these libraries can be found at
+their respective hosting sites as well as at
+ftp://gcc.gnu.org/pub/gcc/infrastructure/.  See also
+http://gcc.gnu.org/install/prerequisites.html for additional info.  If
+you obtained GMP, MPFR and/or MPC from a vendor distribution package,
+make sure that you have installed both the libraries and the header
+files.  They may be located in separate packages.
+
+apt-get install lib32gmp-dev libmpfr-dev libmpc-dev gcc-multilib
+*/
+ /// \ThirdPartyDep The version of gcc in the ubuntu 12.04 repositories won't work, You need at least gcc version 4.8.1 to build non-static data member initialisers
   std::vector<std::string> m_requiredArgs = { "-host", "-database", "-username", "-password" };
 };
 

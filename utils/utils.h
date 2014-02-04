@@ -40,7 +40,8 @@
 //#include "elevation.h"
 
 #define FN __PRETTY_FUNCTION__
-
+#define CLASS typeid(*this).name() 
+//#define CLASS (const std::string(typeid(*this).name()))
 class Location;
 
 namespace utils{

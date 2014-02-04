@@ -34,7 +34,7 @@
 
 // my includes
 #include "mytypes.h" // typedefs
-#include "cube.h" // 'Cube' member variable m_extremities
+#include "Cube.h" // 'Cube' member variable m_extremities
 #include "simpleplot.h" // m_plot
 
 class Locations;
@@ -67,8 +67,6 @@ private:
   }
 };
 
-typedef std::map<longitude_t, Latitudes> longitudes_t; // long = x , lat = y, elev = z
-
 class Longitudes
 {
 public:
@@ -83,7 +81,7 @@ public:
   double getElevation(double& longitude, double& latitude, const uint32_t coarseness);
 
 private:
-  Latitudes& operator[](const longitude_t& longitude);
+  latitudes_t& operator[](const longitude_t& longitude);
   longitudes_t m_longitudes; // m_longitudes[long][lat] = elevation
   longitudes_t m_plottedLongitudes; // m_longitudes[long][lat] = elevation
   const char* m_key = "--longitudes-filename";

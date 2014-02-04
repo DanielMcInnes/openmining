@@ -31,7 +31,8 @@
 #include <qwt3d_function.h>
 
 // my includes
-#include "elevation.h" // Longitudes object
+#include "utils/Rectangle.h"
+#include "Points3DGrid.h"
 
 class Cube;
 class Longitudes;
@@ -40,19 +41,20 @@ typedef double (Longitudes::*fp_t)(double&, double&, uint32_t);
 class GridMappingFunction : public Qwt3D::Function
 {
 public:
-  GridMappingFunction(Qwt3D::SurfacePlot* pw, Longitudes& locations, uint32_t coarseness) : Function(pw), m_locations(locations), m_coarseness(coarseness) 
+  GridMappingFunction(Qwt3D::SurfacePlot* pw, Points3DGrid& locations, utils::Rectangle_t& grid) : Function(pw), m_locations(locations), m_grid(grid)
   {
   }
 
-  Longitudes& m_locations;
+  Points3DGrid& m_locations;
   double operator()(double x, double y);
-  uint32_t m_coarseness;
-};
+  utils::Rectangle_t m_grid;
+}
+;
 
 class Plot : public Qwt3D::SurfacePlot
 {
 public:
-  Plot(QStringList& args, Cube& cube, Longitudes& locations);
+  Plot(QStringList& args, Cube& cube, Points3DGrid& locations);
   double (*funcptr)(double x, double y);
 };
 

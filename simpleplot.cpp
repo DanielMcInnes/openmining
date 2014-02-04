@@ -36,39 +36,45 @@
 #include "location.h"  
 #include "utils/Exit.h"
 #include "utils/copy_mapped_value.h"
+#include "utils/Rectangle.h"
+#include "utils/save.h"
+#include "utils/utils.h"
 
 using namespace std;
 using namespace Qwt3D;
 using namespace utils;
 
-Plot::Plot(QStringList& args, Cube& cube, Longitudes& locations)
+Plot::Plot(QStringList& args, Cube& boundary, Points3DGrid& locations)
 {
-  uint32_t columns = 41, rows = 31, plotx = 800, ploty = 600;
-  longitude_t column_width = 0;
+  uint32_t columns = 40, rows = 30;
+  longitude_t grid_width  = 0;
+  latitude_t  grid_height = 0;
   float xscale = 1, yscale = 1, zscale = 1;
 
   setTitle("A Simple SurfacePlot Demonstration");
   copy_mapped_value(args, "-xscale", xscale);
   copy_mapped_value(args, "-yscale", yscale);
   copy_mapped_value(args, "-zscale", zscale);
-  copy_mapped_value(args, "--plotsize-x", plotx);
-  copy_mapped_value(args, "--plotsize-y", ploty);
   copy_mapped_value(args, "-columns", columns);
   copy_mapped_value(args, "-rows", rows);
   if (columns < 1) Exit("Error! Invalid number of columns specified via '-columns'", -1);
   if (rows < 1)    Exit("Error! Invalid number of rows specified via '-rows'"      , -1);
   
-  column_width = cube.longitudeRange() / columns;
-  cout << "Column width = " << column_width << " units of latitude." << endl;
+  grid_width  = boundary.longitudeRange() / columns;
+  grid_height = boundary.latitudeRange() / rows;
+  Rectangle_t grid(grid_width, grid_height);
   
-  GridMappingFunction gridMappingFunction(this, locations, (column_width / 2));
+  cout << "Grid width  = " << grid_width  << " units of latitude."  << endl;
+  cout << "Grid height = " << grid_height << " units of longitude." << endl;
+  
+  GridMappingFunction gridMappingFunction(this, locations, grid);
   
   gridMappingFunction.setMesh(columns+1,rows+1); // x, y. How finely we slice the x and y domains. Gridlines = columns + 1, rows + 1.
 
-  cout << "calling setDomain(" << cube << ")" << endl;
-  gridMappingFunction.setDomain(cube.m_minlong, cube.m_maxlong, cube.m_minlat, cube.m_maxlat ); // xmin, xmax, ymin, ymax
-  gridMappingFunction.setMinZ(cube.m_minel);
-  gridMappingFunction.setMaxZ(cube.m_maxel);
+  cout << "calling setDomain(" << boundary << ")" << endl;
+  gridMappingFunction.setDomain(boundary.m_minx, boundary.m_maxx, boundary.m_miny, boundary.m_maxy ); // xmin, xmax, ymin, ymax
+  gridMappingFunction.setMinZ(boundary.m_minz);
+  gridMappingFunction.setMaxZ(boundary.m_maxz);
   
   cout << "calling create() " << endl;
   gridMappingFunction.create();
@@ -90,30 +96,27 @@ Plot::Plot(QStringList& args, Cube& cube, Longitudes& locations)
 
   coordinates()->axes[X1].setLabelString("x-axis");
   coordinates()->axes[Y1].setLabelString("y-axis");
-  coordinates()->axes[Z1].setLabelString(QChar (0x38f)); // Omega - see http://www.unicode.org/charts/
 
   setCoordinateStyle(BOX);
 
   updateData();
   cout << "calling updateGL() " << endl;
   updateGL();
-  cout << "calling resize() " << endl;
-  resize(plotx,ploty);
-
-  cout << "calling locations.saveIfUpdated()";
-  locations.saveIfUpdated();
 }
 
 double GridMappingFunction::operator()(double x, double y)
 {
-    //return log((1-x)*(1-x) + 100 * (y - x*x)*(y - x*x)) / 8;
 
-    /*
-    longitude_t lo = x;
-    latitude_t la = y;
-    return m_longitudes.getElevation(lo,la); 
-    */
+//  return log((1-x)*(1-x) + 100 * (y - x*x)*(y - x*x)) / 8;
 
-  return m_locations.getElevation(x,y, m_coarseness);
+
+  int32_t longitude = x;
+  int32_t latitude = y;
+  m_grid.setCentre(longitude, latitude);
+  z_t elevation = 0;
+
+  m_locations.getZ(m_grid, elevation);
+  double retval = elevation;
+  cout << FN << longitude << ", " << latitude << ": " << retval << ", " << endl;
+  return retval;
 }
-

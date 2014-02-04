@@ -7,22 +7,31 @@ CONFIG += exceptions # dhm - without this, exceptions are disabled. We need exce
 INCLUDEPATH += /usr/include/qwtplot3d-qt4
 
 SOURCES = \
-    cube.cpp \
-    database.cpp \
+    Cube.cpp \
+    Database.cpp \
     elevation.cpp \
+    Point3D.cpp \
+    Points3D.cpp \
+    Points3DSqlQuery.cpp \
+    Points3DGrid.cpp \
     location.cpp \
     main.cpp \
     modelview.cpp \
     requirements.cpp \
     simpleplot.cpp \
     utils/copy_mapped_value.cpp \
+    utils/get_mapped_value.cpp \
     utils/find_or_exit.cpp \
     utils/utils.cpp \
 
 HEADERS = \
-    cube.h \
-    database.h \
+    Cube.h \
+    Database.h \
     elevation.h \
+    Point3D.h \ 
+    Points3D.h \
+    Points3DSqlQuery.h \
+    Points3DGrid.h \
     location.h \
     modelview.h \
     mytypes.h \

@@ -40,7 +40,7 @@
 
 // my #includes
 #include "mytypes.h"
-#include "cube.h" // 'Cube' member variable
+#include "Cube.h" // 'Cube' member variable
 
 class Location
 {
@@ -51,7 +51,7 @@ public:
   bool inside(const Cube& cube);
 
   latitude_t m_latitude;	// -116788254 = 116.788254 degrees south
-  longitude_t m_longitude;//, m_maxlat;	// 543654588 = 54.3654588 degrees east
+  longitude_t m_longitude;//, m_maxy;	// 543654588 = 54.3654588 degrees east
   elevation_t m_elevation; 	// 10889 = 108.89m above mean sea level (geoid)
   std::string toString(void) const;
 
@@ -87,7 +87,6 @@ public:
   std::string m_filename;
 
   void print(void);
-  void build();
   void build(QSqlQuery& query);
   void build(QString& str);
   bool load(const QStringList& args);

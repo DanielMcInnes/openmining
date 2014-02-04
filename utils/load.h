@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
 // boost includes
 #include <boost/archive/text_iarchive.hpp>
@@ -10,7 +11,7 @@
 namespace utils
 {
   template <class Tobject, class Tfilename>
-  bool load(Tobject& object, Tfilename& filename)
+  bool load(Tobject& object, Tfilename filename)
   {
     bool retval = false;
     if (filename == "")
@@ -28,6 +29,10 @@ namespace utils
         ia >> object;
         retval = true;
       }
+      else
+      {
+        std::cerr << __PRETTY_FUNCTION__ <<  " Error loading object from file '" << filename << "'" << std::endl;
+      }
     }
     return (retval);
   }
@@ -36,6 +41,12 @@ namespace utils
   bool load(Tobject* object, Tfilename& filename)
   {
     return (load (*object, filename));
+  }
+
+  template <class Tobject>
+  bool load(Tobject* object, const char* filename)
+  {
+    return (load (*object, std::string(filename)));
   }
 }
 

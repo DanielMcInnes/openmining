@@ -32,18 +32,17 @@
 #include <QString>
 
 // my includes
-#include "cube.h"
+#include "Cube.h"
 #include "utils/utils.h"
 #include "utils/find_or_exit.h"
 #include "utils/copy_mapped_value.h"
 
-
 using namespace std;
 using namespace utils;
 
-Cube::Cube() : m_minlat(INT32_MAX), m_maxlat(INT32_MIN), m_minlong(INT32_MAX), m_maxlong(INT32_MIN), m_minel(INT32_MAX), m_maxel(INT32_MIN), m_sidelength(0) {}
+Cube::Cube() : m_miny(INT32_MAX), m_maxy(INT32_MIN), m_minx(INT32_MAX), m_maxx(INT32_MIN), m_minz(INT32_MAX), m_maxz(INT32_MIN), m_sidelength(0) {}
 
-bool Cube::Load(const QStringList& args)
+bool Cube::init(const QStringList& args)
 {
   if (copy_mapped_value(args, "-sidelength", m_sidelength))
   { 
@@ -53,33 +52,33 @@ bool Cube::Load(const QStringList& args)
   {
     cout << "sidelength not specified." << endl;
   }
-  m_minlat  = find_or_exit(args, "-minlat",  FN);
-  m_maxlat  = find_or_exit(args, "-maxlat",  FN);
-  m_minlong = find_or_exit(args, "-minlong", FN);
-  m_maxlong = find_or_exit(args, "-maxlong", FN);
-  m_minel   = find_or_exit(args, "-minel",   FN);
-  m_maxel   = find_or_exit(args, "-maxel",   FN);
+  m_miny  = find_or_exit(args, "-minlat",  FN);
+  m_maxy  = find_or_exit(args, "-maxlat",  FN);
+  m_minx = find_or_exit(args, "-minlong", FN);
+  m_maxx = find_or_exit(args, "-maxlong", FN);
+  m_minz   = find_or_exit(args, "-minel",   FN);
+  m_maxz   = find_or_exit(args, "-maxel",   FN);
   return(true);
 }
 
 void Cube::Print() const
 {
-  cout << FN << "m_minlat = " << m_minlat << endl;
-  cout << FN << "m_maxlat = " << m_maxlat << endl;
-  cout << FN << "m_minlong = " << m_minlong << endl;
-  cout << FN << "m_maxlong = " << m_maxlong << endl;
-  cout << FN << "m_minel = " << m_minel << endl;
-  cout << FN << "m_maxel = " << m_maxel << endl;
+  cout << FN << "m_miny = " << m_miny << endl;
+  cout << FN << "m_maxy = " << m_maxy << endl;
+  cout << FN << "m_minx = " << m_minx << endl;
+  cout << FN << "m_maxx = " << m_maxx << endl;
+  cout << FN << "m_minz = " << m_minz << endl;
+  cout << FN << "m_maxz = " << m_maxz << endl;
 }
 
 void Cube::UpdateMinMax(const longitude_t& longitude, const latitude_t& latitude, const elevation_t& elevation)
 {
-  if (latitude  < m_minlat) { m_minlat 	= latitude;  }
-  if (latitude  > m_maxlat) { m_maxlat 	= latitude;  }
-  if (longitude < m_minlong){ m_minlong = longitude; }
-  if (longitude > m_maxlong){ m_maxlong = longitude; }
-  if (elevation < m_minel)  { m_minel 	= elevation; }
-  if (elevation > m_maxel)  { m_maxel 	= elevation; }
+  if (latitude  < m_miny) { m_miny 	= latitude;  }
+  if (latitude  > m_maxy) { m_maxy 	= latitude;  }
+  if (longitude < m_minx){ m_minx = longitude; }
+  if (longitude > m_maxx){ m_maxx = longitude; }
+  if (elevation < m_minz)  { m_minz 	= elevation; }
+  if (elevation > m_maxz)  { m_maxz 	= elevation; }
 }
 
 string Cube::ranges() const
@@ -93,7 +92,7 @@ string Cube::ranges() const
 
 std::ostream& operator<<(std::ostream& os, const Cube& cube)
 {
-  os << " m_minlong: " << cube.m_minlong << ", m_maxlong: " << cube.m_maxlong << ", m_minlat: " << cube.m_minlat << ", m_maxlat: " <<  cube.m_maxlat << ", m_minel: " <<  cube.m_minel << ", m_maxel: " << cube.m_maxel <<  ", ranges: " << cube.ranges();
+  os << " m_minx: " << cube.m_minx << ", m_maxx: " << cube.m_maxx << ", m_miny: " << cube.m_miny << ", m_maxy: " <<  cube.m_maxy << ", m_minz: " <<  cube.m_minz << ", m_maxz: " << cube.m_maxz <<  ", ranges: " << cube.ranges();
   return os;
 }
 
