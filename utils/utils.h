@@ -46,7 +46,6 @@ class Location;
 
 namespace utils{
   std::string timestamp(void);
-  bool contains_key(const QStringList& args, const char* key);
   void csl_2_vec(QSqlQuery& query, int index, const char* separator, std::vector<int>& vec, int& val);
 
   void exit_if_no_cachefile_specified(const QStringList& args, const std::string& key, std::string& dest, const std::string& functionName);

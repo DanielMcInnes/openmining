@@ -45,24 +45,7 @@ namespace utils{
     timeinfo = localtime(&rawtime); 
     return std::string(asctime(timeinfo));
   }
-
-  bool contains_key(const QStringList& args, const char* key)
-  {
-    bool retval = false;
-    if (args.indexOf(key) != -1) retval = true;
-    return (retval);
-  }
-  
  
-  void csl_2_vec(QSqlQuery& query, int index, const char* separator, std::vector<int>& vec, int& val)
-  {
-    QStringList stringList = query.value(index).toString().split(separator);
-    for (auto iter : stringList) {
-      val += iter.toInt();
-      vec.push_back(val);        
-    }
-  }
-  
   void exit_if_no_cachefile_specified(const QStringList& args, const string& key, string& dest, const string& functionName)
   {
     copy_mapped_value(args, key, dest);
@@ -72,12 +55,6 @@ namespace utils{
       usage();
       Exit(functionName, -1);
     }
-  }
-
-  void usage()
-  {
-    cout << "Usage: ./openmining -host localhost -database mydbname -username myname -password mypassword -minlat -117000000 -maxlat -116000000 -minlong 543000000 -maxlong 544000000 -minel 0 -maxel 100000 --locations-query \"SELECT latitudes, longitudes, elevations from gps_history LIMIT 100;\" " << endl;
-    cout << "eg. ./openmining -host localhost -database db123 -username me -password mypassword -minlat -117000000 -maxlat -116000000 -minlong 543000000 -maxlong 544000000 -minel 0 -maxel 100000 --locations-query \"SELECT latitudes, longitudes, elevations from gps_history LIMIT 100;\"" << endl;
   }
 
 /*

@@ -8,7 +8,7 @@ class Points3D
 {
 public:
   Points3D() : m_changesNotSaved(false) {}
-  //virtual z_t getZ(const x_t x, const y_t y) = 0;
+  //virtual zcoordinate32_t getZ(const xcoordinate32_t x, const y_coordinate32_t y) = 0;
   bool m_changesNotSaved;
 private:
 };

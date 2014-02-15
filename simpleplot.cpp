@@ -33,7 +33,6 @@
 
 // my includes
 #include "simpleplot.h"
-#include "location.h"  
 #include "utils/Exit.h"
 #include "utils/copy_mapped_value.h"
 #include "utils/Rectangle.h"
@@ -44,11 +43,11 @@ using namespace std;
 using namespace Qwt3D;
 using namespace utils;
 
-Plot::Plot(QStringList& args, Cube& boundary, Points3DGrid& locations)
+Plot::Plot(QStringList& args, Cube& boundary, points3dgrid32_t& locations)
 {
   uint32_t columns = 40, rows = 30;
-  longitude_t grid_width  = 0;
-  latitude_t  grid_height = 0;
+  xcoordinate32_t grid_width  = 0;
+  y_coordinate32_t  grid_height = 0;
   float xscale = 1, yscale = 1, zscale = 1;
 
   setTitle("A Simple SurfacePlot Demonstration");
@@ -113,7 +112,7 @@ double GridMappingFunction::operator()(double x, double y)
   int32_t longitude = x;
   int32_t latitude = y;
   m_grid.setCentre(longitude, latitude);
-  z_t elevation = 0;
+  zcoordinate32_t elevation = 0;
 
   m_locations.getZ(m_grid, elevation);
   double retval = elevation;

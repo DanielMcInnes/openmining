@@ -31,13 +31,11 @@ graphviz
 
 // my includes
 #include "modelview.h"
-#include "database.h"
-#include "location.h"
+#include "Database.h"
 #include "utils/utils.h"
 #include "simpleplot.h"
-#include "elevation.h"
 #include "utils/Exit.h"
-#include "Points3DSqlQuery.h"
+#include "Points3DGrid.h"
 
 using namespace std;
 using namespace utils;
@@ -56,12 +54,11 @@ void runchecks();
 int main(int argc, char *argv[])
 {
   runchecks();
-  string time1 = "Start time: " + timestamp();
-  cout << FN << time1 << std::endl;
+  cout << FN << "Start time: " << timestamp() << endl;
   QApplication app(argc, argv);
   QStringList args = QCoreApplication::arguments();
   Database db(args);
-  Points3DGrid grid(args);
+  points3dgrid32_t grid(args);
   Cube boundary;
   boundary.init(args);
   Plot plot(args, boundary, grid);

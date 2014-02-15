@@ -28,7 +28,7 @@
 #include <QStringList>
 
 // my includes
-#include "database.h"
+#include "Database.h"
 #include "utils/utils.h" // FN
 #include "utils/Exit.h"
 //#include "utils/check_argv.h"

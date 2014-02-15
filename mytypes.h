@@ -10,17 +10,11 @@
 // Qt includes
 
 // my includes
-typedef int32_t x_t;
-typedef int32_t y_t;
-typedef int32_t z_t;
+typedef int32_t y_coordinate32_t;
+typedef int32_t xcoordinate32_t;
+typedef int32_t zcoordinate32_t;
 
-
-typedef int32_t latitude_t;
-typedef int32_t longitude_t;
-typedef int32_t elevation_t;
-typedef std::map<latitude_t, elevation_t> latitudes_t;
-typedef std::map<longitude_t, latitudes_t> longitudes_t; // long = x , lat = y, elev = z
-
-
+typedef std::map<y_coordinate32_t, zcoordinate32_t> yzcoordinates32_t;
+typedef std::map<xcoordinate32_t, yzcoordinates32_t> xyzcoordinates32_t; // long = x , lat = y, elev = z
 
 #endif

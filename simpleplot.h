@@ -34,18 +34,14 @@
 #include "utils/Rectangle.h"
 #include "Points3DGrid.h"
 
-class Cube;
-class Longitudes;
-typedef double (Longitudes::*fp_t)(double&, double&, uint32_t);
-
 class GridMappingFunction : public Qwt3D::Function
 {
 public:
-  GridMappingFunction(Qwt3D::SurfacePlot* pw, Points3DGrid& locations, utils::Rectangle_t& grid) : Function(pw), m_locations(locations), m_grid(grid)
+  GridMappingFunction(Qwt3D::SurfacePlot* pw, points3dgrid32_t& locations, utils::Rectangle_t& grid) : Function(pw), m_locations(locations), m_grid(grid)
   {
   }
 
-  Points3DGrid& m_locations;
+  points3dgrid32_t& m_locations;
   double operator()(double x, double y);
   utils::Rectangle_t m_grid;
 }
@@ -54,7 +50,7 @@ public:
 class Plot : public Qwt3D::SurfacePlot
 {
 public:
-  Plot(QStringList& args, Cube& cube, Points3DGrid& locations);
+  Plot(QStringList& args, Cube& cube, points3dgrid32_t& locations);
   double (*funcptr)(double x, double y);
 };
 

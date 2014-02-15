@@ -9,36 +9,33 @@ INCLUDEPATH += /usr/include/qwtplot3d-qt4
 SOURCES = \
     Cube.cpp \
     Database.cpp \
-    elevation.cpp \
     Point3D.cpp \
     Points3D.cpp \
-    Points3DSqlQuery.cpp \
-    Points3DGrid.cpp \
-    location.cpp \
     main.cpp \
     modelview.cpp \
-    requirements.cpp \
     simpleplot.cpp \
+    utils/contains_key.cpp \
     utils/copy_mapped_value.cpp \
     utils/get_mapped_value.cpp \
     utils/find_or_exit.cpp \
+    utils/usage.cpp \
     utils/utils.cpp \
+    utils/csl_2_vec.cpp \
 
 HEADERS = \
     Cube.h \
     Database.h \
-    elevation.h \
     Point3D.h \ 
     Points3D.h \
     Points3DSqlQuery.h \
     Points3DGrid.h \
-    location.h \
     modelview.h \
     mytypes.h \
     simpleplot.h \
     utils/between.h \
     utils/check_argv.h \
     utils/contains.h \
+    utils/contains_key.h \
     utils/copy_mapped_value.h \
     utils/get_mapped_value.h \
     utils/Exit.h \
@@ -49,7 +46,9 @@ HEADERS = \
     utils/same_size.h \
     utils/save.h \
     utils/update_progress.h \
+    utils/usage.h \
     utils/utils.h \
+    utils/csl_2_vec.h \
 
 # RESOURCES = model.qrc
 

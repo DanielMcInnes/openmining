@@ -52,12 +52,13 @@ bool Cube::init(const QStringList& args)
   {
     cout << "sidelength not specified." << endl;
   }
-  m_miny  = find_or_exit(args, "-minlat",  FN);
-  m_maxy  = find_or_exit(args, "-maxlat",  FN);
   m_minx = find_or_exit(args, "-minlong", FN);
+  m_miny = find_or_exit(args, "-minlat",  FN);
+  m_minz = find_or_exit(args, "-minel",   FN);
   m_maxx = find_or_exit(args, "-maxlong", FN);
-  m_minz   = find_or_exit(args, "-minel",   FN);
-  m_maxz   = find_or_exit(args, "-maxel",   FN);
+  m_maxy = find_or_exit(args, "-maxlat",  FN);
+  m_maxz = find_or_exit(args, "-maxel",   FN);
+
   return(true);
 }
 
@@ -71,7 +72,7 @@ void Cube::Print() const
   cout << FN << "m_maxz = " << m_maxz << endl;
 }
 
-void Cube::UpdateMinMax(const longitude_t& longitude, const latitude_t& latitude, const elevation_t& elevation)
+void Cube::UpdateMinMax(const xcoordinate32_t& longitude, const y_coordinate32_t& latitude, const zcoordinate32_t& elevation)
 {
   if (latitude  < m_miny) { m_miny 	= latitude;  }
   if (latitude  > m_maxy) { m_maxy 	= latitude;  }
@@ -95,9 +96,4 @@ std::ostream& operator<<(std::ostream& os, const Cube& cube)
   os << " m_minx: " << cube.m_minx << ", m_maxx: " << cube.m_maxx << ", m_miny: " << cube.m_miny << ", m_maxy: " <<  cube.m_maxy << ", m_minz: " <<  cube.m_minz << ", m_maxz: " << cube.m_maxz <<  ", ranges: " << cube.ranges();
   return os;
 }
-
-
-
-
-
 
