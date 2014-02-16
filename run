@@ -1,0 +1,1 @@
+./openmining -host localhost -database jmineops_rao -username developer -password jigsaw -minlat -116950000 -maxlat -116600000 -minlong 543550000 -maxlong 543850000 -minel 0 -maxel 100000 --locations-query SELECT latitudes, longitudes, elevations from shift_gps; -columns 400 -rows 300
