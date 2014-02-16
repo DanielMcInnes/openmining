@@ -16,7 +16,7 @@
 *.3ds
 
 # cached db query results
-*.cache
+*.cachefile
 
 # executables
 openmining
