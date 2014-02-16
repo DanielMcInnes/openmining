@@ -43,14 +43,14 @@ using namespace std;
 using namespace Qwt3D;
 using namespace utils;
 
-Plot::Plot(QStringList& args, Cube& boundary, points3dgrid32_t& locations)
+Plot::Plot(QStringList& args, Cube& boundary, points3dgrid32_t& locations) : m_args(args)
 {
   uint32_t columns = 40, rows = 30;
   xcoordinate32_t grid_width  = 0;
   y_coordinate32_t  grid_height = 0;
   float xscale = 1, yscale = 1, zscale = 1;
 
-  setTitle("A Simple SurfacePlot Demonstration");
+  setTitle("https://github.com/DanielMcInnes/openmining");
   copy_mapped_value(args, "-xscale", xscale);
   copy_mapped_value(args, "-yscale", yscale);
   copy_mapped_value(args, "-zscale", zscale);
@@ -105,10 +105,6 @@ Plot::Plot(QStringList& args, Cube& boundary, points3dgrid32_t& locations)
 
 double GridMappingFunction::operator()(double x, double y)
 {
-
-//  return log((1-x)*(1-x) + 100 * (y - x*x)*(y - x*x)) / 8;
-
-
   int32_t longitude = x;
   int32_t latitude = y;
   m_grid.setCentre(longitude, latitude);
@@ -116,6 +112,6 @@ double GridMappingFunction::operator()(double x, double y)
 
   m_locations.getZ(m_grid, elevation);
   double retval = elevation;
-  cout << FN << longitude << ", " << latitude << ": " << retval << ", " << endl;
+  //cout << FN << longitude << ", " << latitude << ": " << retval << ", " << endl;
   return retval;
 }

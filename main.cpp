@@ -31,7 +31,6 @@ graphviz
 
 // my includes
 #include "modelview.h"
-#include "Database.h"
 #include "utils/utils.h"
 #include "simpleplot.h"
 #include "utils/Exit.h"
@@ -51,13 +50,13 @@ void runchecks();
 // elevation:
 // elevation min: 0m
 //elevation max:  100000 (1000m)
+
 int main(int argc, char *argv[])
 {
   runchecks();
-  cout << FN << "Start time: " << timestamp() << endl;
   QApplication app(argc, argv);
+  cout << FN << "Start time: " << timestamp() << endl;
   QStringList args = QCoreApplication::arguments();
-  Database db(args);
   points3dgrid32_t grid(args);
   Cube boundary;
   boundary.init(args);

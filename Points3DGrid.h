@@ -22,22 +22,22 @@
 #include "utils/load.h"
 #include "utils/save.h"
 #include "utils/contains_key.h"
-
 template<class TGridDataContainer, class TSqlDataContainer>
 class Points3DGrid : public Points3D
 {
 private:
-  //xyzcoordinates32_t m_gridData; // interpolated subset of m_sqlQueryPoints. Much smaller. Gets built once and then cached.
   TGridDataContainer m_gridData; // interpolated subset of m_sqlQueryPoints. Much smaller. Gets built once and then cached.
   TSqlDataContainer m_sqlQueryPoints; // big data structure, only restored if m_gridData cannot be restored from local cache file. Gets built once from remote db and then cached on local disk.
-  bool Points3DGrid_dbg = true;
+  bool Points3DGrid_dbg = false;
+  const char* cachefile = "Points3DGrid.cachefile";
 
 public:
   Points3DGrid(const QStringList& args) : m_sqlQueryPoints(args)
   {
-    if (utils::load(this, CLASS))
+    //if (utils::load(this, CLASS))
+    if (utils::load(this, cachefile))
     {
-      std::cout << FN <<   " loaded object from file '" << CLASS << "'." << std::endl;
+      std::cout << FN <<   " loaded object from file '" << cachefile << "'." << std::endl;
     }
     else
     {
@@ -53,8 +53,9 @@ public:
 
   void saveIfUpdated()
   {
-    std::cout << FN << "...." << CLASS;
-    utils::saveIfUpdated(this, CLASS);
+    std::cout << FN << "...." << cachefile ;
+    //utils::saveIfUpdated(this, CLASS);
+    utils::saveIfUpdated(this, "Points3DGrid.cachefile");
     std::cout << ".finished" << std::endl;
   }
 
@@ -71,7 +72,7 @@ public:
     catch (...) // this will happen once for every point in the grid. Once the answer has been calculated, the result is cached to ram, and then to disk for subsequent executions of the program. Next time the program is run, all elevations are restored from the local cache file to m_gridData. This code will not run again until the local cache file is deleted, or new grid points are plotted.
     {
       m_sqlQueryPoints.getZ(rectangle, elevation);
-      std::cout << FN << " catch (...) m_sqlQueryPoints.getZ(" << rectangle << ") returns " << elevation << std::endl;
+      if (Points3DGrid_dbg) std::cout << FN << " catch (...) m_sqlQueryPoints.getZ(" << rectangle << ") returns " << elevation << std::endl;
       m_gridData[longitude][latitude] = elevation; // save our interpolated gps location in RAM. Later on we will save it to disk.
       m_changesNotSaved = true;
     }

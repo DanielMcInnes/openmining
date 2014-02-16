@@ -29,6 +29,8 @@
 #include <qapplication.h>
 #include <qwt3d_surfaceplot.h>
 #include <qwt3d_function.h>
+#include <QString>
+#include <QStringList>
 
 // my includes
 #include "utils/Rectangle.h"
@@ -49,6 +51,7 @@ public:
 
 class Plot : public Qwt3D::SurfacePlot
 {
+QStringList& m_args;
 public:
   Plot(QStringList& args, Cube& cube, points3dgrid32_t& locations);
   double (*funcptr)(double x, double y);

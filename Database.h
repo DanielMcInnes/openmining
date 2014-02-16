@@ -35,6 +35,7 @@ class Database
 {
 public:
   Database(const QStringList& args); 
+  ~Database();
   bool m_initialised;
   QSqlDatabase m_db;
 
@@ -53,7 +54,6 @@ files.  They may be located in separate packages.
 apt-get install lib32gmp-dev libmpfr-dev libmpc-dev gcc-multilib
 */
  /// \ThirdPartyDep The version of gcc in the ubuntu 12.04 repositories won't work, You need at least gcc version 4.8.1 to build non-static data member initialisers
-  std::vector<std::string> m_requiredArgs = { "-host", "-database", "-username", "-password" };
 };
 
 #endif

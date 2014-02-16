@@ -31,7 +31,7 @@ namespace utils
       }
       else
       {
-        std::cerr << __PRETTY_FUNCTION__ <<  " Error loading object from file '" << filename << "'" << std::endl;
+        std::cerr << __PRETTY_FUNCTION__ <<  " Couldn't load object from file '" << filename << "'" << std::endl;
       }
     }
     return (retval);

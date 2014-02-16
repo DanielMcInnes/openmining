@@ -71,3 +71,7 @@ Database::Database(const QStringList& args) : m_initialised(false)
     }
   }
 }
+Database::~Database()
+{
+  m_db.close(); // leaks memory if we don't do this. Would never have known if not for valgrind. 
+}

@@ -34,12 +34,30 @@
 #include "utils/percent.h"
 #include "utils/same_size.h"
 #include "utils/csl_2_vec.h"
+#include "Database.h"
 
 template <class T1>
 class Points3DSqlQuery : public Points3D
 {
+private:
+  Cube m_boundary;
+  T1 m_sqlQueryPoints; // interpolated subset of m_sqlQueryPoints. Much smaller. Gets built once and then cached.
+  uint32_t m_numInvalidLocations, m_dbRowCount, m_dbNumRows;
+
+  // When the class Archive corresponds to an output archive, the
+  // & operator is defined similar to <<.  Likewise, when the class Archive
+  // is a type of input archive the & operator is defined similar to >>.
+  template<class Archive>
+  void serialize(Archive& ar, const unsigned int version)
+  {
+    ar & m_sqlQueryPoints;
+    Q_UNUSED(version);
+  }
+  QStringList m_args;
+  const char* cachefile = "Points3DGrid.cachefile";
+
 public:
-  Points3DSqlQuery(const QStringList& args) : m_numInvalidLocations(0), m_dbRowCount(0), m_dbNumRows(0)
+  Points3DSqlQuery(const QStringList& args) : m_numInvalidLocations(0), m_dbRowCount(0), m_dbNumRows(0), m_args(args)
   {
     m_boundary.init(args);
   }
@@ -75,9 +93,10 @@ public:
 
   void init(const QStringList& args)
   {
-    if (utils::load(this, CLASS))
+    //if (utils::load(this, CLASS))
+    if (utils::load(this, cachefile))
     {
-      std::cout << FN <<   " loaded object from file '" << CLASS << "'." << std::endl;
+      std::cout << FN <<   " loaded object from file '" << cachefile << "'." << std::endl;
     }
     else
     {
@@ -85,12 +104,13 @@ public:
       QString str, strCountQuery = "SELECT COUNT(*) from shift_gps;";
       utils::copy_mapped_value(args, "--locations-count-query", strCountQuery);
   
+      Database db(args);
       QSqlQuery countQuery(strCountQuery);
       while (countQuery.next())
       {
         m_dbNumRows = countQuery.value(0).toUInt();
       }
-      std::cout << FN << " finished count query, m_dbNumRows == " << m_dbNumRows << std::endl;
+      //std::cout << FN << " finished count query, m_dbNumRows == " << m_dbNumRows << std::endl;
   
       const char* key = "--locations-query";
       bool result = (utils::copy_mapped_value(args, key, str));
@@ -101,7 +121,8 @@ public:
       }
       build(str);
   
-      utils::save(*this, CLASS);
+      //utils::save(*this, CLASS);
+      utils::save(*this, "Points3DSqlQuery.cachefile");
     }
   
     if (utils::contains_key(args, "--exitafterlocationsquery")) exit (0);
@@ -117,7 +138,7 @@ public:
   {
     uint32_t progress = 0;
     query.setForwardOnly(true);
-    std::cout << FN << ": started" << std::endl;
+    //std::cout << FN << ": started" << std::endl;
 
     QSqlQuery countQuery(QString("SELECT COUNT(*) FROM shift_gps;"));
     while (countQuery.next())
@@ -127,7 +148,6 @@ public:
 
     while (query.next()) 
     {
-      std::cout << FN << ": 1" << std::endl;
       int32_t latitude = 0, longitude = 0, elevation = 0;
       std::vector<int32_t> vecLatitudes, vecLongitudes, vecElevations;
 
@@ -144,36 +164,21 @@ public:
         Point3D point(vecLatitudes[i], vecLongitudes[i], vecElevations[i]);
         if (point.inside(m_boundary))
         {
-          std::cout << FN << ": location within bounds" << std::endl;
+          //utils::contains_key(m_args, FN) && std::cout << FN << ": location within bounds" << std::endl;
           m_sqlQueryPoints[point.m_x][point.m_y] = point.m_z;        
         }
         else
         {
-          std::cout << FN << ": location outside bounds" << std::endl;
+          //std::cout << FN << ": location outside bounds" << std::endl;
           m_numInvalidLocations++;
         }
       }
       utils::update_progress(utils::percent(m_dbRowCount++,m_dbNumRows), progress, FN);
     }
-    std::cout << FN << ": finished" << std::endl;
+    //std::cout << FN << ": finished" << std::endl;
   }
   friend class boost::serialization::access;
 
-private:
-  Cube m_boundary;
-  //std::vector<Point3D> m_locations;
-  T1 m_sqlQueryPoints; // interpolated subset of m_sqlQueryPoints. Much smaller. Gets built once and then cached.
-  uint32_t m_numInvalidLocations, m_dbRowCount, m_dbNumRows;
-
-  // When the class Archive corresponds to an output archive, the
-  // & operator is defined similar to <<.  Likewise, when the class Archive
-  // is a type of input archive the & operator is defined similar to >>.
-  template<class Archive>
-  void serialize(Archive& ar, const unsigned int version)
-  {
-    ar & m_sqlQueryPoints;
-    Q_UNUSED(version);
-  }
 };
 
 typedef Points3DSqlQuery<xyzcoordinates32_t> points3DSqlQuery_t;
