@@ -4,7 +4,8 @@ QT += 3d
 QT += sql 	# dhm - needed for postgres interface
 CONFIG += c++11
 CONFIG += exceptions # dhm - without this, exceptions are disabled. We need exceptions enabled to use boost::serialization.
-INCLUDEPATH += /opt/openmining/thirdparty/qwtplot3d/include/
+INCLUDEPATH += /usr/include/qwtplot3d-qt4
+INCLUDEPATH += /opt/qt5/qwtplot3d/include/
 
 SOURCES = \
     Cube.cpp \
