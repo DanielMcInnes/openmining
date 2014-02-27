@@ -7,6 +7,7 @@
 #else
 #include <QtOpenGL/qgl.h>
 #endif
+#include <GL/glu.h>
 
 namespace Qwt3D
 {
