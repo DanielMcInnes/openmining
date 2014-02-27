@@ -28,16 +28,16 @@ class Points3DGrid : public Points3D
 private:
   TGridDataContainer m_gridData; // interpolated subset of m_sqlQueryPoints. Much smaller. Gets built once and then cached.
   TSqlDataContainer m_sqlQueryPoints; // big data structure, only restored if m_gridData cannot be restored from local cache file. Gets built once from remote db and then cached on local disk.
-  bool Points3DGrid_dbg = false;
-  const char* cachefile = "Points3DGrid.cachefile";
+  bool Points3DGrid_dbg;
+  const char* m_cachefile;
 
 public:
-  Points3DGrid(const QStringList& args) : m_sqlQueryPoints(args)
+  Points3DGrid(const QStringList& args) : m_sqlQueryPoints(args), Points3DGrid_dbg(false), m_cachefile("Points3DGrid.m_cachefile")
   {
     //if (utils::load(this, CLASS))
-    if (utils::load(this, cachefile))
+    if (utils::load(this, m_cachefile))
     {
-      std::cout << FN <<   " loaded object from file '" << cachefile << "'." << std::endl;
+      std::cout << FN <<   " loaded object from file '" << m_cachefile << "'." << std::endl;
     }
     else
     {
@@ -53,9 +53,9 @@ public:
 
   void saveIfUpdated()
   {
-    std::cout << FN << "...." << cachefile ;
+    std::cout << FN << "...." << m_cachefile ;
     //utils::saveIfUpdated(this, CLASS);
-    utils::saveIfUpdated(this, "Points3DGrid.cachefile");
+    utils::saveIfUpdated(this, "Points3DGrid.m_cachefile");
     std::cout << ".finished" << std::endl;
   }
 

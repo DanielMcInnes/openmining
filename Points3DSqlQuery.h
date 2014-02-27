@@ -54,10 +54,13 @@ private:
     Q_UNUSED(version);
   }
   QStringList m_args;
-  const char* cachefile = "Points3DGrid.cachefile";
+
+  // not until gcc 4.8.2! 
+  // const char* m_cachefile = "Points3DGrid.m_cachefile";
+  const char* m_cachefile;
 
 public:
-  Points3DSqlQuery(const QStringList& args) : m_numInvalidLocations(0), m_dbRowCount(0), m_dbNumRows(0), m_args(args)
+  Points3DSqlQuery(const QStringList& args) : m_numInvalidLocations(0), m_dbRowCount(0), m_dbNumRows(0), m_args(args), m_cachefile("Points3DGrid.m_cachefile")
   {
     m_boundary.init(args);
   }
@@ -94,9 +97,9 @@ public:
   void init(const QStringList& args)
   {
     //if (utils::load(this, CLASS))
-    if (utils::load(this, cachefile))
+    if (utils::load(this, m_cachefile))
     {
-      std::cout << FN <<   " loaded object from file '" << cachefile << "'." << std::endl;
+      std::cout << FN <<   " loaded object from file '" << m_cachefile << "'." << std::endl;
     }
     else
     {
@@ -122,7 +125,7 @@ public:
       build(str);
   
       //utils::save(*this, CLASS);
-      utils::save(*this, "Points3DSqlQuery.cachefile");
+      utils::save(*this, "Points3DSqlQuery.m_cachefile");
     }
   
     if (utils::contains_key(args, "--exitafterlocationsquery")) exit (0);

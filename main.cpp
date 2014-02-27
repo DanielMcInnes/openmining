@@ -20,7 +20,7 @@
 
 /*
 Dependencies:
-Qt
+Qt 5.2
 graphviz
 */
 
