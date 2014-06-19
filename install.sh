@@ -2,9 +2,12 @@
 
 sudo apt-get install build-essential perl python git "^libxcb.*" libx11-xcb-dev libglu1-mesa-dev libxrender-dev flex bison gperf libicu-dev libxslt-dev ruby libasound2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libpq5 libpq-dev libboost-serialization1.48
 sudo mkdir /opt/openmining 
-sudo chmod -R a+rw /opt/qt5 /opt/openmining
-cd /opt/openmining
+sudo chmod -R a+rw /opt/openmining
+cd /opt/
 git clone https://github.com/DanielMcInnes/openmining.git
+git submodule init
+git submodule update
+
 cd /opt/openmining/thirdparty/qt5/src
 ./init-repository --no-webkit
 cd /opt/qt5/build

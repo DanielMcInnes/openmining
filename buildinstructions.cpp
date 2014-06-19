@@ -3,17 +3,26 @@
 \subsection siss000001 Ubuntu 12.04
 
 - sudo apt-get install build-essential perl python git "^libxcb.*" libx11-xcb-dev libglu1-mesa-dev libxrender-dev flex bison gperf libicu-dev libxslt-dev ruby libasound2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libpq5 libpq-dev libboost-serialization1.48
-- sudo mkdir /opt/openmining 
+- mkdir ~/openmining 
+
+- cd ~
+- git clone https://github.com/DanielMcInnes/openmining.git
+
+- cd ~/openmining
+- git submodule init
+- git submodule update 
 - sudo chmod -R a+rw /opt/qt5 /opt/openmining
 - cd /opt/openmining/thirdparty/qt5/src
-- ./init-repository --no-webkit
+- ./init-repository
 - cd /opt/qt5/build
 - ../src/configure -opensource -confirm-license
 - make
 - sudo make install
 
-# for some reason qmake gets built but not installed. Do it manually:
-- sudo ln -s /opt/qt5/build/qtbase/bin/qmake /usr/bin/qmake  
+# add the following to ~/.bashrc
+if [ -d ~/openmining/thirdparty/qtbuild/qtbase/bin/ ]; then
+    export PATH=$PATH:~/openmining/thirdparty/qtbuild/qtbase/bin
+fi
 
 
 - cd /opt/qt5/build/
@@ -21,6 +30,7 @@
 - tar xvf qwtplot3d-0.2.7.tgz
 - cd /opt/qt5/build/qwtplot3d
 - qmake
+- make
 
 
 
