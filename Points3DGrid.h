@@ -91,7 +91,6 @@ public:
   }
 };
 
-//typedef Points3DGrid<xyzcoordinates32_t, Points3DSqlQuery> points3dgrid32_t;
 typedef Points3DGrid<xyzcoordinates32_t, points3DSqlQuery_t> points3dgrid32_t;
 
 #endif

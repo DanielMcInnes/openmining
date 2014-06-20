@@ -27,7 +27,8 @@
 
 // Qt libs
 #include <qapplication.h>
-#include <qwt3d_surfaceplot.h>
+#include "/home/dmcinnes/openmining/thirdparty/qwtplot3d/include/qwt3d_surfaceplot.h"
+//#include <thirdparty/qwtplot3d/include/qwt3d_function.h>
 #include <qwt3d_function.h>
 #include <QString>
 #include <QStringList>

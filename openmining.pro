@@ -1,10 +1,13 @@
 TEMPLATE = app
 TARGET = openmining
-QT += 3d
-QT += sql 	# dhm - needed for postgres interface
+QT += sql  	# dhm - needed for postgres interface
 CONFIG += c++11
 CONFIG += exceptions # dhm - without this, exceptions are disabled. We need exceptions enabled to use boost::serialization.
-INCLUDEPATH += /opt/openmining/thirdparty/qwtplot3d/include/
+INCLUDEPATH += /usr/local/Qt-5.3.0/include/
+INCLUDEPATH += /usr/local/Qt-5.3.0/include/Qt3D/
+INCLUDEPATH += /usr/local/Qt-5.3.0/include/QtWidgets/
+INCLUDEPATH += thirdparty/qwtplot3d/include/
+
 
 SOURCES = \
     Cube.cpp \
@@ -50,14 +53,13 @@ HEADERS = \
     utils/utils.h \
     utils/csl_2_vec.h \
 
-# RESOURCES = model.qrc
-
 QMAKE_CXXFLAGS += -std=c++0x
 
-# put the path to shared libraries here
-QMAKE_LFLAGS += -Wl,--rpath=/home/dmcinnes/qt5/qwtplot3d/lib # dhm - this is needed to make the executable know where to find .so files. Adding it to 'LIBS' isn't enough. See http://developer.nokia.com/Community/Wiki/How_to_deploy_and_link_a_shared_library_on_Harmattan
+QMAKE_LFLAGS += -Wl,--rpath=thirdparty/qwtplot3d/lib # dhm - this is needed to make the executable know where to find .so files. Adding it to 'LIBS' isn't enough. See http://developer.nokia.c
 
-LIBS += -L/home/dmcinnes/qt5/qwtplot3d/lib -lqwtplot3d 
+# put the path to shared libraries here
+LIBS += -Lthirdparty/qwtplot3d/lib -lqwtplot3d 
+LIBS += -Lthirdparty/qt3d/lib -lQt53D 
+LIBS += -L/usr/local/Qt-5.3.0/lib/ -lQt5OpenGL
 LIBS += -lboost_serialization
 LIBS +=	-lGLU  					# this is required by qwtplot3d
-
