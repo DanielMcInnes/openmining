@@ -1,6 +1,0 @@
-[submodule "thirdparty/qt5"]
-	path = thirdparty/qt5
-	url = git://gitorious.org/qt/qt5.git
-[submodule "thirdparty/qt3d"]
-	path = thirdparty/qt3d
-	url = git://gitorious.org/qt/qt3d.git
