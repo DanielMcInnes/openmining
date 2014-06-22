@@ -6,7 +6,7 @@ CONFIG += exceptions # dhm - without this, exceptions are disabled. We need exce
 INCLUDEPATH += /usr/local/Qt-5.3.0/include/
 INCLUDEPATH += /usr/local/Qt-5.3.0/include/Qt3D/
 INCLUDEPATH += /usr/local/Qt-5.3.0/include/QtWidgets/
-INCLUDEPATH += thirdparty/qwtplot3d/include/
+INCLUDEPATH += ../
 
 
 SOURCES = \
@@ -55,10 +55,10 @@ HEADERS = \
 
 QMAKE_CXXFLAGS += -std=c++0x
 
-QMAKE_LFLAGS += -Wl,--rpath=thirdparty/qwtplot3d/lib # dhm - this is needed to make the executable know where to find .so files. Adding it to 'LIBS' isn't enough. See http://developer.nokia.c
+QMAKE_LFLAGS += -Wl,--rpath=../qwtplot3d/lib # dhm - this is needed to make the executable know where to find .so files. Adding it to 'LIBS' isn't enough. See http://developer.nokia.c
 
 # put the path to shared libraries here
-LIBS += -Lthirdparty/qwtplot3d/lib -lqwtplot3d 
+LIBS += -L../qwtplot3d/lib -lqwtplot3d 
 LIBS += -Lthirdparty/qt3d/lib -lQt53D 
 LIBS += -L/usr/local/Qt-5.3.0/lib/ -lQt5OpenGL
 LIBS += -lboost_serialization

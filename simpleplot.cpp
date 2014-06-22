@@ -28,8 +28,8 @@
 #include <iostream>
 
 #include <qapplication.h>
-#include <qwt3d_surfaceplot.h>
-#include <qwt3d_function.h>
+#include <qwtplot3d/include/qwt3d_surfaceplot.h>
+#include <qwtplot3d/include/qwt3d_function.h>
 
 // my includes
 #include "simpleplot.h"
