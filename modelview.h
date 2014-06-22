@@ -42,7 +42,7 @@
 #define MODELVIEW_H
 
 //! [class-defn]
-#include "qglview.h"
+#include <qglview.h>
 
 QT_BEGIN_NAMESPACE
 class QGLAbstractScene;

@@ -1,39 +1,60 @@
 #!/bin/sh
 BASE_DIR=~/openmining_project
 
+sudo apt-get install -y build-essential perl python git "^libxcb.*" libx11-xcb-dev libglu1-mesa-dev libxrender-dev flex bison gperf libicu-dev libxslt-dev ruby libasound2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libpq5 libpq-dev libboost-serialization1.48 postgresql-client-9.1
+
+# optional extras
+sudo apt-get install -y synaptic cscope openssh-server
+
+
 mkdir $BASE_DIR
 cd $BASE_DIR
 
 
-#git clone git://gitorious.org/qt/qt5.git qt5
-#cd qt5
-#./init-repository --no-webkit
-#cd ..
-
-#mkdir qtbuild
-#cd qtbuild
-#../qt5/configure -developer-build -nomake examples -nomake tests -no-gtkstyle -opensource -confirm-license
-#sudo make install
+# qt5
+########################################################################################################
 #cd $BASE_DIR
-#git clone git://gitorious.org/qt/qt3d.git 
-#cd $BASE_DIR/qt3d
-#patch -N src/threed/painting/qglpainter.cpp < ../openmining/third_party_patches/patch.qglpainter.cpp
-#qmake
+#git clone git://gitorious.org/qt/qt5.git $BASE_DIR/qt5
+#cd $BASE_DIR/qt5
+#./init-repository --no-webkit
+#cd $BASE_DIR
+#exit
+#mkdir $BASE_DIR/qtbuild
+#cd $BASE_DIR/qtbuild
+#$BASE_DIR/qt5/configure -no-gtkstyle -opensource -confirm-license
+#$BASE_DIR/qt5/configure -developer-build -nomake examples -nomake tests -no-gtkstyle -opensource -confirm-license
 #make
 #sudo make install
+#cd $BASE_DIR
+########################################################################################################
+
+
+
+# qt3d
+########################################################################################################
+#cd $BASE_DIR
+#git clone git://gitorious.org/qt/qt3d.git 
+#exit
+export PATH=$PATH:/usr/local/Qt-5.4.0/bin
+echo $PATH
+cd $BASE_DIR/qt3d
+#patch -N src/threed/painting/qglpainter.cpp < ../openmining/third_party_patches/patch.qglpainter.cpp
+qmake
+make
+sudo make install
 
 # qwtplot3d
 ########################################################################################################
-#cd $BASE_DIR/
-#wget -nc  http://sourceforge.net/projects/qwtplot3d/files/qwtplot3d/0.2.7/qwtplot3d-0.2.7.tgz
-#tar xvf qwtplot3d-0.2.7.tgz
-#patch -N qwtplot3d/include/qwt3d_openglhelper.h < openmining/third_party_patches/patch.qwt3d_openglhelper.h
+cd $BASE_DIR/
+wget -nc  http://sourceforge.net/projects/qwtplot3d/files/qwtplot3d/0.2.7/qwtplot3d-0.2.7.tgz
+tar xvf qwtplot3d-0.2.7.tgz
+patch -N qwtplot3d/include/qwt3d_openglhelper.h < openmining/third_party_patches/patch.qwt3d_openglhelper.h
 
-#cd qwtplot3d
-#qmake
-#make
-#sudo make install
-#cd $BASE_DIR
+cd qwtplot3d
+qmake
+make
+sudo make install
+cd $BASE_DIR
 #########################################################################################################
 
 
