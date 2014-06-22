@@ -1,0 +1,43 @@
+#!/bin/sh
+BASE_DIR=~/openmining_project
+
+mkdir $BASE_DIR
+cd $BASE_DIR
+
+
+#git clone git://gitorious.org/qt/qt5.git qt5
+#cd qt5
+#./init-repository --no-webkit
+#cd ..
+
+#mkdir qtbuild
+#cd qtbuild
+#../qt5/configure -developer-build -nomake examples -nomake tests -no-gtkstyle -opensource -confirm-license
+#sudo make install
+#cd $BASE_DIR
+#git clone git://gitorious.org/qt/qt3d.git 
+#cd $BASE_DIR/qt3d
+#patch -N src/threed/painting/qglpainter.cpp < ../openmining/third_party_patches/patch.qglpainter.cpp
+#qmake
+#make
+#sudo make install
+
+# qwtplot3d
+########################################################################################################
+#cd $BASE_DIR/
+#wget -nc  http://sourceforge.net/projects/qwtplot3d/files/qwtplot3d/0.2.7/qwtplot3d-0.2.7.tgz
+#tar xvf qwtplot3d-0.2.7.tgz
+#patch -N qwtplot3d/include/qwt3d_openglhelper.h < openmining/third_party_patches/patch.qwt3d_openglhelper.h
+
+#cd qwtplot3d
+#qmake
+#make
+#sudo make install
+#cd $BASE_DIR
+#########################################################################################################
+
+
+cd $BASE_DIR/openmining
+qmake
+make
+cd $BASE_DIR
