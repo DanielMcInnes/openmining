@@ -73,7 +73,7 @@ void Cube::Print() const
   cout << FN << "m_maxz = " << m_maxz << endl;
 }
 
-void Cube::UpdateMinMax(const xcoordinate32_t& longitude, const y_coordinate32_t& latitude, const zcoordinate32_t& elevation)
+void Cube::UpdateMinMax(const x_int32_t& longitude, const y_int32_t& latitude, const z_int32_t& elevation)
 {
   if (latitude  < m_miny) { m_miny 	= latitude;  }
   if (latitude  > m_maxy) { m_maxy 	= latitude;  }

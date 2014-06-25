@@ -59,11 +59,11 @@ public:
     std::cout << ".finished" << std::endl;
   }
 
-  bool getZ(const utils::Rectangle_t& rectangle, zcoordinate32_t& elevation)
+  bool getZ(const utils::Rectangle_t& rectangle, z_int32_t& elevation)
   {
     bool retval = false;
-    xcoordinate32_t longitude = rectangle.xCentre();
-    y_coordinate32_t  latitude  = rectangle.yCentre();
+    x_int32_t longitude = rectangle.xCentre();
+    y_int32_t  latitude  = rectangle.yCentre();
     try
     {
       elevation = m_gridData.at(longitude).at(latitude);

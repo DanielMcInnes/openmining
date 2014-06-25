@@ -9,10 +9,10 @@ class Point3D
 {
 public:
   Point3D() : m_x(0), m_y(0), m_z(0) {}
-  Point3D(const y_coordinate32_t y, const xcoordinate32_t x, const zcoordinate32_t z) : m_x(x), m_y(y), m_z(z) {}
-  xcoordinate32_t m_x;
-  y_coordinate32_t m_y;
-  zcoordinate32_t m_z;
+  Point3D(const y_int32_t y, const x_int32_t x, const z_int32_t z) : m_x(x), m_y(y), m_z(z) {}
+  x_int32_t m_x;
+  y_int32_t m_y;
+  z_int32_t m_z;
   bool inside(const Cube& cube) const;
   friend class boost::serialization::access;
 

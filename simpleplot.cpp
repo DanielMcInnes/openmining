@@ -46,8 +46,8 @@ using namespace utils;
 Plot::Plot(QStringList& args, Cube& boundary, points3dgrid32_t& locations) : m_args(args)
 {
   uint32_t columns = 40, rows = 30;
-  xcoordinate32_t grid_width  = 0;
-  y_coordinate32_t  grid_height = 0;
+  x_int32_t grid_width  = 0;
+  y_int32_t  grid_height = 0;
   float xscale = 1, yscale = 1, zscale = 1;
 
   setTitle("https://github.com/DanielMcInnes/openmining");
@@ -108,7 +108,7 @@ double GridMappingFunction::operator()(double x, double y)
   int32_t longitude = x;
   int32_t latitude = y;
   m_grid.setCentre(longitude, latitude);
-  zcoordinate32_t elevation = 0;
+  z_int32_t elevation = 0;
 
   m_locations.getZ(m_grid, elevation);
   double retval = elevation;

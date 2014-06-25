@@ -65,7 +65,7 @@ public:
     m_boundary.init(args);
   }
   Points3DSqlQuery() : m_numInvalidLocations(0), m_dbRowCount(0), m_dbNumRows(0) {}
-  bool getZ(const utils::Rectangle_t& rectangle, zcoordinate32_t& elevation)
+  bool getZ(const utils::Rectangle_t& rectangle, z_int32_t& elevation)
   {
     bool retval = false;
     auto lower_longitude = m_sqlQueryPoints.lower_bound(rectangle.xMin());
@@ -88,7 +88,7 @@ public:
     return retval;
   }
 
-  bool getZ(const utils::Rectangle_t& rectangle, zcoordinate32_t& elevation, bool& retval)
+  bool getZ(const utils::Rectangle_t& rectangle, z_int32_t& elevation, bool& retval)
   {
     retval = getZ(rectangle, elevation);
     return (retval);

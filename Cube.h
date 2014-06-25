@@ -40,20 +40,20 @@ class Cube
 public:
   //const member functions
   void Print() const;
-  xcoordinate32_t longitudeRange() const { return m_maxx - m_minx; }
-  y_coordinate32_t latitudeRange()   const { return m_maxy - m_miny; } 
-  zcoordinate32_t elevationRange() const { return m_maxz - m_minz; }
+  x_int32_t longitudeRange() const { return m_maxx - m_minx; }
+  y_int32_t latitudeRange()   const { return m_maxy - m_miny; } 
+  z_int32_t elevationRange() const { return m_maxz - m_minz; }
   std::string ranges() const;
 
   // non-const member functions
   Cube();
   bool init(const QStringList& args);
-  void UpdateMinMax(const xcoordinate32_t& longitude, const y_coordinate32_t& latitude, const zcoordinate32_t& elevation);
+  void UpdateMinMax(const x_int32_t& longitude, const y_int32_t& latitude, const z_int32_t& elevation);
 
   // member variables
-  y_coordinate32_t m_miny, m_maxy;
-  xcoordinate32_t m_minx, m_maxx;
-  zcoordinate32_t m_minz, m_maxz;
+  y_int32_t m_miny, m_maxy;
+  x_int32_t m_minx, m_maxx;
+  z_int32_t m_minz, m_maxz;
   int32_t m_sidelength;
 
   // friends
