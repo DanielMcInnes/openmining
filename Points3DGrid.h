@@ -34,7 +34,6 @@ private:
 public:
   Points3DGrid(const QStringList& args) : m_sqlQueryPoints(args), Points3DGrid_dbg(false), m_cachefile("Points3DGrid.m_cachefile")
   {
-    //if (utils::load(this, CLASS))
     if (utils::load(this, m_cachefile))
     {
       std::cout << FN <<   " loaded object from file '" << m_cachefile << "'." << std::endl;
@@ -91,6 +90,6 @@ public:
   }
 };
 
-typedef Points3DGrid<xyzcoordinates32_t, points3DSqlQuery_t> points3dgrid32_t;
+typedef Points3DGrid<mapx_mapyz, points3DSqlQuery_t> points3dgrid32_t;
 
 #endif

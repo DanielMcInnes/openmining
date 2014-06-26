@@ -13,28 +13,26 @@ cd $BASE_DIR
 
 # qt5
 ########################################################################################################
-#cd $BASE_DIR
-#git clone git://gitorious.org/qt/qt5.git $BASE_DIR/qt5
-#cd $BASE_DIR/qt5
-#./init-repository --no-webkit
-#cd $BASE_DIR
-#exit
-#mkdir $BASE_DIR/qtbuild
-#cd $BASE_DIR/qtbuild
-#$BASE_DIR/qt5/configure -no-gtkstyle -opensource -confirm-license
-#$BASE_DIR/qt5/configure -developer-build -nomake examples -nomake tests -no-gtkstyle -opensource -confirm-license
-#make
-#sudo make install
-#cd $BASE_DIR
+cd $BASE_DIR
+git clone git://gitorious.org/qt/qt5.git $BASE_DIR/qt5
+cd $BASE_DIR/qt5
+./init-repository --no-webkit
+cd $BASE_DIR
+mkdir $BASE_DIR/qtbuild
+cd $BASE_DIR/qtbuild
+$BASE_DIR/qt5/configure -no-gtkstyle -opensource -confirm-license
+$BASE_DIR/qt5/configure -developer-build -nomake examples -nomake tests -no-gtkstyle -opensource -confirm-license
+make
+sudo make install
+cd $BASE_DIR
 ########################################################################################################
 
 
 
 # qt3d
 ########################################################################################################
-#cd $BASE_DIR
-#git clone git://gitorious.org/qt/qt3d.git 
-#exit
+cd $BASE_DIR
+git clone git://gitorious.org/qt/qt3d.git 
 export PATH=$PATH:/usr/local/Qt-5.4.0/bin
 echo $PATH
 cd $BASE_DIR/qt3d

@@ -53,7 +53,7 @@ HEADERS = \
     utils/utils.h \
     utils/csl_2_vec.h \
 
-QMAKE_CXXFLAGS += -std=c++0x
+QMAKE_CXXFLAGS += -std=c++0x -ggdb
 
 QMAKE_LFLAGS += -Wl,--rpath=../qwtplot3d/lib # dhm - this is needed to make the executable know where to find .so files. Adding it to 'LIBS' isn't enough. See http://developer.nokia.c
 

@@ -184,6 +184,6 @@ public:
 
 };
 
-typedef Points3DSqlQuery<xyzcoordinates32_t> points3DSqlQuery_t;
+typedef Points3DSqlQuery<mapx_mapyz> points3DSqlQuery_t;
 #endif
 
