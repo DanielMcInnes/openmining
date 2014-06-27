@@ -1,0 +1,42 @@
+#!/bin/sh
+#  
+numargs=$#
+this_script=$0
+username=$1
+BASE_DIR=~/openmining_project
+
+# qt5
+########################################################################################################
+#./setup_qt5 $username
+cd $BASE_DIR
+sudo -u $username git clone git://gitorious.org/qt/qt5.git $BASE_DIR/qt5
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+
+cd $BASE_DIR/qt5
+sudo -u $username ./init-repository --no-webkit
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+
+cd $BASE_DIR
+sudo -u $username mkdir $BASE_DIR/qtbuild
+cd $BASE_DIR/qtbuild
+sudo -u $username $BASE_DIR/qt5/configure -no-gtkstyle -opensource -confirm-license
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+
+sudo -u $username make
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+
+make install
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+
+cd $BASE_DIR
+########################################################################################################

@@ -1,0 +1,49 @@
+#!/bin/sh
+#  
+numargs=$#
+this_script=$0
+username=$1
+BASE_DIR=~/openmining_project
+QMAKE=/usr/local/Qt-5.4.0/bin/qmake
+
+# qwtplot3d
+########################################################################################################
+#./setup_qwtplot3d $username
+cd $BASE_DIR/
+sudo -u $username wget -nc  http://sourceforge.net/projects/qwtplot3d/files/qwtplot3d/0.2.7/qwtplot3d-0.2.7.tgz
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+
+sudo -u $username tar xvf qwtplot3d-0.2.7.tgz
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+
+sudo -u $username patch -N qwtplot3d/include/qwt3d_openglhelper.h < openmining/third_party_patches/patch.qwt3d_openglhelper.h
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+
+
+cd qwtplot3d
+sudo -u $username QMAKE
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+
+sudo -u $username make
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+
+make install
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+
+cd $BASE_DIR
+#########################################################################################################
+
+
+
