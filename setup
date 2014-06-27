@@ -1,62 +1,57 @@
 #!/bin/sh
+# don't start this script as root, run as a normal user. We need to run some actions as $USER, and others as root.
+#  
+numargs=$#
+this_script=$0
+username=$1
 BASE_DIR=~/openmining_project
+QMAKE=/usr/local/Qt-5.4.0/bin/qmake
 
-sudo apt-get install -y build-essential perl python git "^libxcb.*" libx11-xcb-dev libglu1-mesa-dev libxrender-dev flex bison gperf libicu-dev libxslt-dev ruby libasound2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libpq5 libpq-dev libboost-serialization1.48 postgresql-client-9.1
+echo "numargs = $numargs"
 
+if [ "$numargs" = 0 ]; then
+  username=$USER
+  echo "re-running script as root..."
+  sudo ./$this_script $USER # re-run this script as root, passing in the username of the original caller
+  echo "finished running as root."
+  exit $?
+fi
+
+echo "username = $username"
+. ./setup_path
+sudo -u $username echo $PATH
+
+required_packages="build-essential perl python git "^libxcb.*" libx11-xcb-dev libglu1-mesa-dev libxrender-dev flex bison gperf libicu-dev libxslt-dev ruby libasound2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libpq5 libpq-dev libboost-serialization1.48 postgresql-client-9.1"
+optional_packages="synaptic cscope openssh-server"
+sudo apt-get install -y $required_packages $optional_packages
 # optional extras
-sudo apt-get install -y synaptic cscope openssh-server
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
 
-
-mkdir $BASE_DIR
+sudo -u $username mkdir -p $BASE_DIR
 cd $BASE_DIR
 
 
 # qt5
 ########################################################################################################
-cd $BASE_DIR
-git clone git://gitorious.org/qt/qt5.git $BASE_DIR/qt5
-cd $BASE_DIR/qt5
-./init-repository --no-webkit
-cd $BASE_DIR
-mkdir $BASE_DIR/qtbuild
-cd $BASE_DIR/qtbuild
-$BASE_DIR/qt5/configure -no-gtkstyle -opensource -confirm-license
-$BASE_DIR/qt5/configure -developer-build -nomake examples -nomake tests -no-gtkstyle -opensource -confirm-license
-make
-sudo make install
-cd $BASE_DIR
-########################################################################################################
-
-
+#./setup_qt5 $username
 
 # qt3d
 ########################################################################################################
-cd $BASE_DIR
-git clone git://gitorious.org/qt/qt3d.git 
-export PATH=$PATH:/usr/local/Qt-5.4.0/bin
-echo $PATH
-cd $BASE_DIR/qt3d
-#patch -N src/threed/painting/qglpainter.cpp < ../openmining/third_party_patches/patch.qglpainter.cpp
-qmake
-make
-sudo make install
+#./setup_qt3d $username
 
 # qwtplot3d
 ########################################################################################################
-cd $BASE_DIR/
-wget -nc  http://sourceforge.net/projects/qwtplot3d/files/qwtplot3d/0.2.7/qwtplot3d-0.2.7.tgz
-tar xvf qwtplot3d-0.2.7.tgz
-patch -N qwtplot3d/include/qwt3d_openglhelper.h < openmining/third_party_patches/patch.qwt3d_openglhelper.h
-
-cd qwtplot3d
-qmake
-make
-sudo make install
-cd $BASE_DIR
-#########################################################################################################
-
+#./setup_qwtplot3d $username
 
 cd $BASE_DIR/openmining
-qmake
-make
+sudo -u $username $QMAKE
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+sudo -u $username make
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
 cd $BASE_DIR
