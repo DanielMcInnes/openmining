@@ -3,9 +3,9 @@ TARGET = openmining
 QT += sql  	# dhm - needed for postgres interface
 CONFIG += c++11
 CONFIG += exceptions # dhm - without this, exceptions are disabled. We need exceptions enabled to use boost::serialization.
-INCLUDEPATH += /usr/local/Qt-5.4.0/include/
-INCLUDEPATH += /usr/local/Qt-5.4.0/include/Qt3D/
-INCLUDEPATH += /usr/local/Qt-5.4.0/include/QtWidgets/
+INCLUDEPATH += /usr/local/Qt-5.3.1/include/
+INCLUDEPATH += /usr/local/Qt-5.3.1/include/Qt3D/
+INCLUDEPATH += /usr/local/Qt-5.3.1/include/QtWidgets/
 INCLUDEPATH += ../
 
 
@@ -60,6 +60,6 @@ QMAKE_LFLAGS += -Wl,--rpath=../qwtplot3d/lib # dhm - this is needed to make the 
 # put the path to shared libraries here
 LIBS += -L../qwtplot3d/lib -lqwtplot3d 
 LIBS += -Lthirdparty/qt3d/lib -lQt53D 
-LIBS += -L/usr/local/Qt-5.4.0/lib/ -lQt5OpenGL
+LIBS += -L/usr/local/Qt-5.3.1/lib/ -lQt5OpenGL
 LIBS += -lboost_serialization
 LIBS +=	-lGLU  					# this is required by qwtplot3d
