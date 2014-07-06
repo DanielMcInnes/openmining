@@ -1,0 +1,4 @@
+QMAKE=/usr/local/Qt-5.4.0/bin/qmake
+BASE_DIR=~/openmining_project
+
+

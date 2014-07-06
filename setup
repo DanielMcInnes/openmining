@@ -7,6 +7,7 @@ username=$1
 BASE_DIR=~/openmining_project
 QMAKE=/usr/local/Qt-5.4.0/bin/qmake
 
+. ./source_me
 echo "numargs = $numargs"
 
 if [ "$numargs" = 0 ]; then
@@ -33,23 +34,14 @@ cd $BASE_DIR/openmining
 
 # qt5
 ########################################################################################################
-setup_qt5 $username
+#./setup_qt5 $username
 
 # qt3d
 ########################################################################################################
-setup_qt3d $username
+#./setup_qt3d $username
 
 # qwtplot3d
 ########################################################################################################
-setup_qwtplot3d $username
+#./setup_qwtplot3d $username
 
-cd $BASE_DIR/openmining
-sudo -u $username $QMAKE
-if [ "$?" -ne 0 ]; then
-  exit $?
-fi
-sudo -u $username make
-if [ "$?" -ne 0 ]; then
-  exit $?
-fi
-cd $BASE_DIR
+

@@ -1,0 +1,25 @@
+#!/bin/sh
+numargs=$#
+this_script=$0
+username=$1
+
+. ./source_me
+
+if [ "$numargs" = 0 ]; then
+  username=$USER
+  echo "re-running script as root..."
+  sudo ./$this_script $USER # re-run this script as root, passing in the username of the original caller
+  echo "finished running as root."
+  exit $?
+fi
+
+cd $BASE_DIR/openmining
+sudo -u $username $QMAKE
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+sudo -u $username make
+if [ "$?" -ne 0 ]; then
+  exit $?
+fi
+cd $BASE_DIR

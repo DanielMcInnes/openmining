@@ -3,8 +3,7 @@
 numargs=$#
 this_script=$0
 username=$1
-BASE_DIR=~/openmining_project
-QMAKE=/usr/local/Qt-5.4.0/bin/qmake
+. ./source_me
 
 # qwtplot3d
 ########################################################################################################
@@ -27,7 +26,7 @@ fi
 
 
 cd qwtplot3d
-sudo -u $username QMAKE
+sudo -u $username $QMAKE
 if [ "$?" -ne 0 ]; then
   exit $?
 fi
